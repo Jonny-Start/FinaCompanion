@@ -50,13 +50,38 @@ app.use(function (req, res, next) {
 // app.get("/hola", (req, res) => {
 //   res.send("Hola mundo, estoy viviooo");
 // });
+const login = require("./controller/login");
+app.get("/login", login);
+app.get("/", login);
 
-app.get("/", (req, res) => {
-  const data = {
-    title: "finacompanion",
-    message: "¡Hola Mundo!",
+// app.get("/", (req, res) => {
+//   const data = {
+//     title: "finacompanion",
+//     message: "¡Hola Mundo!",
+//   };
+//   res.render("login", data); // Renderiza la plantilla 'index.ejs' con los datos proporcionados
+// });
+
+app.get("/email", (req, res) => {
+  const sgMail = require("@sendgrid/mail");
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const msg = {
+    to: "karengomezmattos@gmail.com", // Quien lo recibe?
+    from: "jonnyalejandro.ca0910@gmail.com", // Quien lo envia?
+    subject: "Este es un correo de saludo", //Asunto
+    //text: "este es el text",
+    html: "<strong>Este es el HTML de prueba</strong>",
   };
-  res.render("login", data); // Renderiza la plantilla 'index.ejs' con los datos proporcionados
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log("Email sent");
+      res.send("Correo enviado");
+    })
+    .catch((error) => {
+      console.error(error);
+      res.send("No se pudo enviar el correo");
+    });
 });
 
 app.use((req, res) => {
