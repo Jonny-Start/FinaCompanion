@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
       if (req.path == "/login" || req.path == "/") {
         res.render("login", {
           title: "finacompanion",
-          message: "¡Hola Angel!",
+          message: "¡Hola Mundo grupo!",
         }); // Renderiza la plantilla 'index.ejs' con los datos proporcionados
       }
       break;

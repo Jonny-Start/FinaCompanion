@@ -66,11 +66,11 @@ app.get("/email", (req, res) => {
   const sgMail = require("@sendgrid/mail");
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-    to: "karengomezmattos@gmail.com", // Quien lo recibe?
+    to: "nicolasanzola5955@gmail.com", // Quien lo recibe?
     from: "jonnyalejandro.ca0910@gmail.com", // Quien lo envia?
     subject: "Este es un correo de saludo", //Asunto
     //text: "este es el text",
-    html: "<strong>Este es el HTML de prueba</strong>",
+    html: "<strong>Esto es un correo desde la app</strong>",
   };
   sgMail
     .send(msg)
