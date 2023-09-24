@@ -54,6 +54,9 @@ const login = require("./controller/login");
 app.get("/login", login);
 app.get("/", login);
 
+const codeEmail = require("./Controller/codeEmail");
+app.get("/codeEmail", codeEmail);
+
 // app.get("/", (req, res) => {
 //   const data = {
 //     title: "finacompanion",
@@ -85,7 +88,8 @@ app.get("/email", (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404).json({
-    message: "endpoint not found",
-  });
+  // res.status(404).json({
+  //   message: "endpoint not found",
+  // });
+  res.render("404");
 });
