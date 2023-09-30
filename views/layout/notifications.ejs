@@ -1,0 +1,67 @@
+ <div id="notifications">
+
+   <%# success %>
+   <% if (validationSuccess.length > 0) { %>
+   <% for (var i = 0; i < validationSuccess.length ;  i++ ) { %>
+   <div class="notify gr">
+     <div class="circle">
+       <i class="fa-solid fa-check"></i>
+     </div>
+     <div class="info">
+       <span>Éxito</span>
+       <span><strong><%= validationSuccess[i] %></strong></span>
+     </div>
+   </div>
+   <% } %>
+   <% } %>
+
+
+   <%# Error %>
+   <% if (validationErrors.length > 0) { %>
+   <% for (var i = 0; i < validationErrors.length ;  i++ ) { %>
+   <div class="notify rd">
+     <div class="circle">
+       <i class="fa-solid fa-check"></i>
+     </div>
+     <div class="info">
+       <span>Error</span>
+       <span><strong><%= validationErrors[i] %></strong></span>
+     </div>
+   </div>
+   <% } %>
+   <% } %>
+
+   <%#
+    <div class="notify or">
+        <div class="circle">
+        <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="info">
+        <span>Download Complete</span>
+        <span>165MB <a href="#">Codepen.io</a> 1:41 PM</span>
+        </div>
+    </div>
+
+    <div class="notify bl">
+        <div class="circle">
+        <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="info">
+        <span>Download Complete</span>
+        <span>165MB <a href="#">Codepen.io</a> 1:41 PM</span>
+        </div>
+    </div>
+    %>
+ </div>
+
+ <script type="text/javascript">
+   // Obtener todos los elementos con la clase "notify"
+   const notifyElements = document.querySelectorAll(".notify");
+
+   // Agregar un controlador de eventos "click" a cada elemento
+   notifyElements.forEach(function(element) {
+     element.addEventListener("click", function() {
+       element.style.display = "none"; // Ocultar el elemento
+     });
+   });
+ </script>

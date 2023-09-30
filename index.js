@@ -3,6 +3,7 @@ const express = require("express");
 require("dotenv").config();
 const ejs = require("ejs");
 const initDB = require("./config/db");
+const session = require("express-session");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -16,11 +17,30 @@ const app = express();
 // Configurar EJS como motor de plantillas
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views"); // Directorio donde se encuentran tus plantillas
+app.use("/public", express.static("public")); // Dejar fija la ruta de la carpeta
 
+// Correr express en un puerto
 app.listen(PORT);
 console.log("Server running on port", PORT);
 initDB();
 app.use(express.json());
+
+// Configura express-session
+
+// Si resave es false, se ahorra un poco de rendimiento al no guardar la sesión en cada solicitud, a menos que se modifique explícitamente.
+// Si saveUninitialized es true, se crearán sesiones para todos los visitantes, incluso si aún no han interactuado con la aplicación.
+app.use(
+  session({
+    secret: "A2b7R9sC1dP5eF3gdskAqQ45L97", // Cambia esto por una cadena segura y secreta
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      secure: false, // Cambia a true si estás utilizando HTTPS
+      // maxAge: 24 * 60 * 60 * 1000, // Tiempo de vida de la cookie en milisegundos (1 día en este ejemplo)
+      maxAge: 2147483647,
+    },
+  })
+);
 
 /*
  * **************
@@ -39,6 +59,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+//Esta linea me sirve para enviar datos del form en el body
+app.use(express.urlencoded({ extended: true }));
+
 /*
  * ***********
  * *Routes**
@@ -52,7 +75,12 @@ app.use(function (req, res, next) {
 // });
 const login = require("./controller/login");
 app.get("/login", login);
+app.post("/login", login);
 app.get("/", login);
+app.post("/", login);
+
+const codeEmail = require("./Controller/codeEmail");
+app.get("/codeEmail", codeEmail);
 
 // app.get("/", (req, res) => {
 //   const data = {
@@ -85,7 +113,8 @@ app.get("/email", (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404).json({
-    message: "endpoint not found",
-  });
+  // res.status(404).json({
+  //   message: "endpoint not found",
+  // });
+  res.render("404");
 });

@@ -3,12 +3,13 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    fullName: { type: String, required: true },
-    phoneNumber: { type: Number, required: true },
-    email: { type: String, required: true, unique: true },
-    validationEmail: { type: Boolean, required: true, default: false },
-    password: { type: String, required: true },
-    active: { type: Boolean, required: true },
+    fullName: { type: String, required: true }, //Nombre completo
+    phoneNumber: { type: Number, required: true }, //Numero de telefono
+    email: { type: String, required: true, unique: true }, // Correo electronico
+    validationEmail: { type: Boolean, required: true, default: false }, // Correo electronico validado
+    resetPassword: { type: Number, required: false }, // Codigo se solicitud de recuperar contraseña
+    password: { type: String, required: true }, // Contraseña
+    active: { type: Boolean, required: true }, // Usuario activo True or False
   },
   {
     //El timestamps crea fecha de actualización y fecha de creación automáticamente
