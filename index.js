@@ -4,6 +4,7 @@ require("dotenv").config();
 const ejs = require("ejs");
 const initDB = require("./config/db");
 const session = require("express-session");
+const { verifySession } = require("./middleware/verificationSession");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -74,13 +75,21 @@ app.use(express.urlencoded({ extended: true }));
 //   res.send("Hola mundo, estoy viviooo");
 // });
 const login = require("./controller/login");
-app.get("/login", login);
-app.post("/login", login);
-app.get("/", login);
-app.post("/", login);
+app.get("/login", verifySession, login);
+app.post("/login", verifySession, login);
+app.get("/", verifySession, login);
+app.post("/", verifySession, login);
 
-const codeEmail = require("./Controller/codeEmail");
-app.get("/codeEmail", codeEmail);
+const createAccount = require("./controller/createAccount");
+app.get("/createAccount", verifySession, createAccount);
+app.post("/createAccount", verifySession, createAccount);
+
+const codeEmail = require("./controller/codeEmail");
+app.get("/codeEmail", verifySession, codeEmail);
+app.post("/codeEmail", verifySession, codeEmail);
+
+const home = require("./controller/home");
+app.get("/home", verifySession, home);
 
 // app.get("/", (req, res) => {
 //   const data = {

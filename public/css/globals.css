@@ -1,3 +1,7 @@
 .hide {
     display: none !important;
 }
+
+.disabled {
+    filter: opacity(0.5) !important;
+}

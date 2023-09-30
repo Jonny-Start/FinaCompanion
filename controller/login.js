@@ -32,17 +32,13 @@ module.exports = async (req, res) => {
       if (req.path == "/login") {
         let { email, password } = req.body;
 
+        if (!email || !password) {
+          newMessage("error", "Ningún campo puede estar vacío.", req);
+          return res.redirect("/login");
+        }
+
         User.findOne({ email: email }).then((user) => {
           if (user) {
-            if (!user.password) {
-              newMessage(
-                "error",
-                "El campo contraseña tiene que estar lleno",
-                req
-              );
-              return res.redirect("/login");
-            }
-
             bcrypt.compare(password, user.password, (error, same) => {
               if (error) {
                 Object.keys(error.errors).map((key) => {
@@ -53,7 +49,12 @@ module.exports = async (req, res) => {
               } else if (same) {
                 // if passwords match
                 // store user session, will talk about it later
-                req.session.userId = user._id;
+                req.session.userID = user._id;
+
+                if (user.validationEmail) {
+                  req.session.validationEmail = user.validationEmail;
+                }
+
                 console.log(req.session);
 
                 return res.redirect("/Home");

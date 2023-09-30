@@ -6,8 +6,8 @@ const userSchema = new Schema(
     fullName: { type: String, required: true }, //Nombre completo
     phoneNumber: { type: Number, required: true }, //Numero de telefono
     email: { type: String, required: true, unique: true }, // Correo electronico
-    validationEmail: { type: Boolean, required: true, default: false }, // Correo electronico validado
-    resetPassword: { type: Number, required: false }, // Codigo se solicitud de recuperar contraseña
+    validationEmail: { type: Number, required: false, default: false }, // Correo electronico validado
+    resetPassword: { type: Number, required: false, default: false }, // Codigo se solicitud de recuperar contraseña
     password: { type: String, required: true }, // Contraseña
     active: { type: Boolean, required: true }, // Usuario activo True or False
   },

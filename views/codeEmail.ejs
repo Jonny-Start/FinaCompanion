@@ -1,7 +1,10 @@
-<%- include('./layout/head') %>
-    <body id="codeEmail">
-        <h1>
-            Hola pros
-        </h1>
-    </body>
+<%- include('./layout/head', { NAME_CSS: "codeEmail" }) %>
+
+<body id="codeEmail">
+  <%- include('./layout/notifications')%>
+  <!--Incluir boton de cerrar session-->
+  <h1>codeEmail</h1>
+
+</body>
+
 <%- include('./layout/footer') %>

@@ -14,9 +14,8 @@ module.exports = async (req, res) => {
 
   switch (TypeRequest) {
     case "GET":
-      if (req.path == "/codeEmail") {
-        req.session.validationEmail = null
-        res.render("codeEmail", {
+      if (req.path == "/home") {
+        res.render("home", {
           validationErrors,
           validationSuccess,
         });

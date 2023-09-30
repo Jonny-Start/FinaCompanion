@@ -17,14 +17,14 @@
 
       <form action="/login" method="POST">
 
-        <label for="email" id="labelEmail">Email
+        <label for="email" id="labelEmail">Correo electronico
           <br />
-          <input type="email" name="email" id="email">
+          <input type="email" name="email" id="email" required>
         </label>
 
-        <label for="password" id="labelPassword">Password
+        <label for="password" id="labelPassword">Contraseña
           <br />
-          <input type="password" name="password" id="password">
+          <input type="password" name="password" id="password" required>
           <i class="fa-regular fa-eye" id="eyeOpen" onclick="changeInput()"></i>
           <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
         </label>
@@ -33,7 +33,7 @@
 
         <button type="submit">Enviar</button>
 
-        <p>¿No tienes una cuenta? <a href="#">Crear cuenta</a></p>
+        <p>¿No tienes una cuenta? <a href="/createAccount">Crear cuenta</a></p>
       </form>
     </section>
 
