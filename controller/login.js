@@ -57,7 +57,7 @@ module.exports = async (req, res) => {
 
                 console.log(req.session);
 
-                return res.redirect("/Home");
+                return res.redirect("/home");
               } else {
                 newMessage("error", "Credenciales incorrectas", req);
                 return res.redirect("/login");

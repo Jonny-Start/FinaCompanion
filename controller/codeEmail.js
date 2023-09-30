@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const { newMessage, clearMessage } = require("./../middleware/utils");
 
 module.exports = async (req, res) => {
   let validationErrors = [];
@@ -15,7 +16,7 @@ module.exports = async (req, res) => {
   switch (TypeRequest) {
     case "GET":
       if (req.path == "/codeEmail") {
-        req.session.validationEmail = null
+        req.session.validationEmail = null;
         res.render("codeEmail", {
           validationErrors,
           validationSuccess,
