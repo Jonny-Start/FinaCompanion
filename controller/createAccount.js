@@ -1,6 +1,5 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
-const { newMessage, clearMessage } = require("./../middleware/utils");
 const {
   newMessage,
   clearMessage,
