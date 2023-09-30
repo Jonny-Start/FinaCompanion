@@ -1,9 +1,55 @@
-<%- include('./layout/head') %>
+<%- include('./layout/head', { NAME_CSS: "login" }) %>
 
-    <body>
-        <h1>
-            <%= message %>
-        </h1>
-    </body>
+<body id="login">
+  <%- include('./layout/notifications')%>
+
+  <main>
+    <section id="includeImg">
+      <img src="public/img/logoTexto.png" alt="Logo de FinaCompanion">
+    </section>
+
+    <section id="includeForm">
+
+      <img src="public/img/icono.png" alt="Logo de FinaCompanion">
+
+      <h1>¡Bienvenido de regreso!</h1>
+      <p>Por favor ingresa tus datos</p>
+
+      <form action="/login" method="POST">
+
+        <label for="email" id="labelEmail">Email
+          <br />
+          <input type="email" name="email" id="email">
+        </label>
+
+        <label for="password" id="labelPassword">Password
+          <br />
+          <input type="password" name="password" id="password">
+          <i class="fa-regular fa-eye" id="eyeOpen" onclick="changeInput()"></i>
+          <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
+        </label>
+
+        <a href="#" id="recovery">¿recuperar contraseña?</a>
+
+        <button type="submit">Enviar</button>
+
+        <p>¿No tienes una cuenta? <a href="#">Crear cuenta</a></p>
+      </form>
+    </section>
+
+  </main>
+
+  <script type="text/javascript">
+    function changeInput() {
+      let inputCh = document.getElementById('password');
+      let eyeOpen = document.getElementById('eyeOpen');
+      let eyeClose = document.getElementById('eyeClose');
+      (inputCh.type == "text") ? (inputCh.type = "password") : (inputCh.type = "text")
+      eyeOpen.classList.toggle('hide');
+      eyeClose.classList.toggle('hide');
+    }
+  </script>
+
+</body>
 
 <%- include('./layout/footer') %>
