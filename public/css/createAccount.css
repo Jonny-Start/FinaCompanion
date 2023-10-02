@@ -32,7 +32,7 @@ body#createAccount section#includeImg {
 }
 
 body#createAccount section#includeImg img {
-    width: 33em;
+    width: 27em;
 }
 
 body#createAccount section#includeForm,
@@ -55,7 +55,7 @@ body#createAccount section#includeForm {
 
 
 body#createAccount section#includeForm img {
-    width: 4em;
+    width: 2em;
     filter: opacity(0.7);
     margin-top: 1em;
 }

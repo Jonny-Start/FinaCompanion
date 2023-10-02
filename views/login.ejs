@@ -12,12 +12,12 @@
 
       <img src="public/img/icono.png" alt="Logo de FinaCompanion">
 
-      <h1>¡Bienvenido de regreso!</h1>
-      <p>Por favor ingresa tus datos</p>
+      <h1>¡Bienvenido!</h1>
+      <p>Por favor ingrese los datos</p>
 
       <form action="/login" method="POST">
 
-        <label for="email" id="labelEmail">Correo electronico
+        <label for="email" id="labelEmail">Correo electrónico
           <br />
           <input type="email" name="email" id="email" required>
         </label>
@@ -29,11 +29,11 @@
           <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
         </label>
 
-        <a href="#" id="recovery">¿recuperar contraseña?</a>
+        <a href="/recoveryPassword" id="recovery">¿Olvidó su contraseña? Pulse aquí</a>
 
-        <button type="submit">Enviar</button>
+        <button type="submit">Ingresar</button>
 
-        <p>¿No tienes una cuenta? <a href="/createAccount">Crear cuenta</a></p>
+        <p>¿Cliente nuevo? <a href="/createAccount">Registrarme</a></p>
       </form>
     </section>
 
