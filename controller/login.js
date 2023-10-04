@@ -49,7 +49,7 @@ module.exports = async (req, res) => {
               } else if (same) {
                 // if passwords match
                 // store user session, will talk about it later
-                req.session.userID = user._id;
+                req.session.userID = user.id;
 
                 if (user.validationEmail) {
                   req.session.validationEmail = user.validationEmail;

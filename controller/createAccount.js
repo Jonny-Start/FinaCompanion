@@ -1,5 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
+require("dotenv").config();
+const sgMail = require("@sendgrid/mail");
 const {
   newMessage,
   clearMessage,
@@ -34,14 +36,14 @@ module.exports = async (req, res) => {
         // validationEmail = false;
         // resetPassword = false;
 
-        if (existUser()) {
+        if (await existUser(email)) {
           newMessage("error", "El correo electrónico ya está en uso.", req);
-          res.redirect("/login");
+          return res.redirect("/createAccount");
         }
 
         if (!fullName || !phoneNumber || !email || !password) {
           newMessage("error", "Ningún campo puede estar vacío.", req);
-          res.redirect("/login");
+          return res.redirect("/createAccount");
         }
         const saltRounds = 10;
         bcrypt.hash(password, saltRounds, function (err, hash) {
@@ -51,14 +53,16 @@ module.exports = async (req, res) => {
             });
 
             newMessage("error", err.message, req);
-            res.redirect("/login");
+            return res.redirect("/createAccount");
           }
+
+          const numberValidate = getNumbers(5);
 
           var new_user = new User({
             fullName: fullName,
             phoneNumber: phoneNumber,
             email: email,
-            validationEmail: getNumbers(5),
+            validationEmail: numberValidate,
             resetPassword: false,
             password: hash,
             active: true,
@@ -67,19 +71,40 @@ module.exports = async (req, res) => {
           new_user
             .save()
             .then((result) => {
-              newMessage("success", "¡Cuenta creada!", req);
-              res.redirect("/login");
+              sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+              const msg = {
+                to: email, // Quien lo recibe?
+                from: "jonnyalejandro.ca0910@gmail.com", // Quien lo envia?
+                subject: "Codigo de verificación FinaCompanion", //Asunto
+                //text: "este es el text",
+                html:
+                  "Hola, <br /> gracias por inscribirte a nuestra plataforma, para poder continuar necesitaras este codigo <br /> <br /> <strong style='font-size: 2em'>" +
+                  numberValidate +
+                  "</strong>",
+              };
+              sgMail
+                .send(msg)
+                .then(() => {
+                  newMessage(
+                    "success",
+                    "¡Cuenta creada!, Ahora intenta ingresar con tus credenciales",
+                    req
+                  );
+                  return res.redirect("/login");
+                })
+                .catch((error) => {
+                  newMessage("error", error.message, req);
+                  return res.redirect("/createAccount");
+                });
             })
             .catch((error) => {
-              Object.keys(err.errors).map((key) => {
-                newMessage("error", err.errors[key].message, req);
-              });
+              newMessage("error", `${error.errmsg}`, req);
               newMessage(
                 "error",
                 "No se pudo crear la cuenta, verifica tus datos o contactate con servicio técnico",
                 req
               );
-              res.redirect("/login");
+              return res.redirect("/createAccount");
             });
         });
       }

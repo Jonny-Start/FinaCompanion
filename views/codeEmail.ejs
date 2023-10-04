@@ -3,8 +3,59 @@
 <body id="codeEmail">
   <%- include('./layout/notifications')%>
   <!--Incluir boton de cerrar session-->
-  <h1>codeEmail</h1>
+  <main>
+    <section id="includeForm">
 
+      <a href="/closeSession" id="exitSession"><i class="fa-solid fa-arrow-left"></i> Salir</a>
+
+      <img src="public/img/icono.png" alt="Logo de FinaCompanion">
+
+      <h1>Codigo de verificación</h1>
+      <p>Por favor ingrese los numero enviados a su correo electrónico</p>
+
+      <form action="/codeEmail" method="POST">
+
+        <div id="contentInputs">
+          <input type="text" class="code-input" maxlength="1" name="number_1" required>
+          <input type="text" class="code-input" maxlength="1" name="number_2" required>
+          <input type="text" class="code-input" maxlength="1" name="number_3" required>
+          <input type="text" class="code-input" maxlength="1" name="number_4" required>
+          <input type="text" class="code-input" maxlength="1" name="number_5" required>
+        </div>
+
+        <button type="submit">Validar</button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <script type="text/javascript">
+    const codeInputs = document.querySelectorAll('.code-input');
+
+    codeInputs.forEach((input, index) => {
+      input.addEventListener('input', (e) => {
+
+        input.value = input.value.replace(/[^0-9]/g, '');
+
+        if (input.value.length === 1) {
+          // Mover el foco al siguiente input si se ingresó un carácter
+          if (index < codeInputs.length - 1) {
+            codeInputs[index + 1].focus();
+          }
+        }
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && input.value.length === 0) {
+          // Mover el foco al input anterior al presionar la tecla "Retroceso"
+          if (index > 0) {
+            codeInputs[index - 1].focus();
+          }
+        }
+      });
+    });
+  </script>
 </body>
 
 <%- include('./layout/footer') %>

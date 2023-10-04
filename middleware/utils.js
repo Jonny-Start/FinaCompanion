@@ -29,10 +29,8 @@ const clearMessage = (req) => {
 
 // Verificar si existe un usuario mediante email
 const User = require("../models/user");
-const existUser = (email) => {
-  User.findOne({ email: email }).then((user) => {
-    return !!email;
-  });
+const existUser = async (email) => {
+  return respon = !!(await User.findOne({ email: email }));
 };
 
 //Crear cadena de numeros aleatoreos

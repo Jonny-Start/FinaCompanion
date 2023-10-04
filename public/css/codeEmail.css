@@ -1,4 +1,4 @@
-body#login {
+body#codeEmail {
     margin: 0;
     padding: 0;
     background-color: #22252a;
@@ -9,10 +9,8 @@ body#login {
 
 }
 
-body#login main {
-    /* grid-template-columns: 1fr 1fr; */
+body#codeEmail main {
     display: grid;
-    grid-template-columns: 65% 35%;
     padding: 1em;
     background-color: #eeeeee;
     width: 100%;
@@ -20,107 +18,92 @@ body#login main {
     margin-right: 4vw;
     border-radius: 15px;
     height: 90vh;
-    /* gap: 1em; */
-    /* overflow: auto; */
 }
 
-body#login section#includeImg {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-body#login section#includeImg img {
-    width: 27em;
-}
-
-body#login section#includeForm,
-body#login form {
+body#codeEmail section#includeForm,
+body#codeEmail form {
     background-color: white;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-body#login section#includeForm {
+body#codeEmail section#includeForm {
+    position: relative;
     background-color: white;
     display: flex;
     flex-direction: column;
     text-align: center;
     border-radius: 10px;
-    /* margin-right: 1em; */
     align-items: center;
 }
 
 
-body#login section#includeForm img {
+body#codeEmail section#includeForm img {
     width: 2em;
     filter: opacity(0.7);
     margin-top: 1em;
 }
 
-body#login h1 {
+body#codeEmail h1 {
     font-weight: bold;
     font-size: 2em;
     margin-bottom: 0;
 }
 
-body#login h1~p {
+body#codeEmail h1~p {
     margin-top: 0;
     font-size: 0.9em;
     color: #0000008a;
 }
 
-body#login button {
+body#codeEmail button {
     width: 5em;
 }
 
-body#login form {
+body#codeEmail form {
     margin-top: 2em;
     align-items: center;
-    width: 15em;
+    width: 90%;
 }
 
-body#login form label {
+body#codeEmail form label {
     width: 100%;
     text-align: left;
 }
 
-body#login label#labelEmail {
+body#codeEmail label#labelEmail {
     margin-bottom: 2em;
 }
 
-body#login label#labelPassword {
-    position: relative;
+
+body#codeEmail div#contentInputs {
+    margin-top: 3em;
+    margin-bottom: 6em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 15px;
 }
 
-body#login label#labelPassword>i {
-    position: absolute;
-    right: 0px;
-    top: 20px;
-    cursor: pointer;
-}
-
-body#login label#labelPassword>input#password {
-    width: calc(100% - 23px);
-    padding-right: 23px;
-}
-
-
-body#login input,
-body#login input:focus {
+body#codeEmail input,
+body#codeEmail input:focus {
     border: 0px;
     border-bottom: 2px black solid;
-    width: 100%;
     outline: none;
+    width: 2rem;
+    font-size: 3rem;
+    text-align: center;
 }
 
-body#login input:focus {
+body#codeEmail input:focus {
     border-color: #6f7eff;
 }
 
-body#login a#recovery {
+body#codeEmail a#recovery {
     width: 100%;
     text-align: right;
     font-size: 0.9em;
@@ -129,7 +112,7 @@ body#login a#recovery {
     margin-bottom: 3em;
 }
 
-body#login button {
+body#codeEmail button {
     width: 12em;
     line-height: 2.3em;
     color: white;
@@ -138,18 +121,30 @@ body#login button {
     border: 0px;
 }
 
-body#login button~p {
+body#codeEmail button~p {
     position: relative;
     margin-top: 5em;
 }
 
+a#exitSession {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 1.2em;
+    color: #5361ea;
+    text-decoration: none;
+    font-weight: bold;
+    filter: drop-shadow(0 0 10px #3a4eff);
+}
+
+a#exitSession i {
+    color: #df6dff;
+    margin-right: 7px;
+}
+
 
 @media screen and (max-width: 1000px) {
-    body#login main {
+    body#codeEmail main {
         grid-template-columns: 1fr;
-    }
-
-    body#login main section#includeImg {
-        display: none;
     }
 }

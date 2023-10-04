@@ -11,6 +11,11 @@
 #notifications .notify {
     width: 300px;
     height: 70px;
+
+    /* min-height: 70px; */
+    z-index: 10;
+    position: relative;
+
     background-color: hsl(0, 0%, 96%);
     border-radius: 7px;
     box-shadow: 0 1px 4px darken(hsl(202, 56%, 30%), 5%);

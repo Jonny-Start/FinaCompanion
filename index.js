@@ -74,6 +74,13 @@ app.use(express.urlencoded({ extended: true }));
 // app.get("/hola", (req, res) => {
 //   res.send("Hola mundo, estoy viviooo");
 // });
+
+app.get("/closeSession", (req, res) => {
+  req.session.destroy((err) => {
+    res.redirect("/"); // will always fire after session is destroyed
+  });
+});
+
 const login = require("./controller/login");
 app.get("/login", verifySession, login);
 app.post("/login", verifySession, login);
@@ -92,10 +99,8 @@ const codeEmail = require("./controller/codeEmail");
 app.get("/codeEmail", verifySession, codeEmail);
 app.post("/codeEmail", verifySession, codeEmail);
 
-
 const home = require("./controller/home");
 app.get("/home", verifySession, home);
-
 
 // app.get("/", (req, res) => {
 //   const data = {
@@ -109,7 +114,7 @@ app.get("/email", (req, res) => {
   const sgMail = require("@sendgrid/mail");
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-    to: "atrujillo93842@universidadean.edu.co", // Quien lo recibe?
+    to: "jonnyalejandro.ca0910@gmail.com", // Quien lo recibe?
     from: "jonnyalejandro.ca0910@gmail.com", // Quien lo envia?
     subject: "Este es un correo de saludo", //Asunto
     //text: "este es el text",
