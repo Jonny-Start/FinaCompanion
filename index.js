@@ -84,12 +84,18 @@ const createAccount = require("./controller/createAccount");
 app.get("/createAccount", verifySession, createAccount);
 app.post("/createAccount", verifySession, createAccount);
 
+const recoveryPassword = require("./controller/recoveryPassword");
+app.get("/recoveryPassword", verifySession, recoveryPassword);
+app.post("/recoveryPassword", verifySession, recoveryPassword);
+
 const codeEmail = require("./controller/codeEmail");
 app.get("/codeEmail", verifySession, codeEmail);
 app.post("/codeEmail", verifySession, codeEmail);
 
+
 const home = require("./controller/home");
 app.get("/home", verifySession, home);
+
 
 // app.get("/", (req, res) => {
 //   const data = {
@@ -103,7 +109,7 @@ app.get("/email", (req, res) => {
   const sgMail = require("@sendgrid/mail");
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-    to: "nicolasanzola5955@gmail.com", // Quien lo recibe?
+    to: "atrujillo93842@universidadean.edu.co", // Quien lo recibe?
     from: "jonnyalejandro.ca0910@gmail.com", // Quien lo envia?
     subject: "Este es un correo de saludo", //Asunto
     //text: "este es el text",
