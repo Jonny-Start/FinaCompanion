@@ -1,3 +1,42 @@
+footer#footerFinaCompanion {
+    position: fixed;
+    width: 100%;
+    bottom: 20px;
+    height: 2.5em;
+    text-align: -webkit-center;
+}
+
+footer#footerFinaCompanion>li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    gap: 2px;
+    background-color: black;
+    max-width: 90vw;
+    border-radius: 40px;
+    color: white;
+    list-style: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+}
+
+ul>i {
+    font-size: 23px;
+}
+
+
+
 .hide {
     display: none !important;
 }

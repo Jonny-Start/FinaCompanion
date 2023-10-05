@@ -1,64 +1,63 @@
 <%- include('./layout/head', { NAME_CSS: "deleteAccount" }) %>
 
-  <body id="deleteAccount">
-    <%- include('./layout/notifications')%>
+<body id="deleteAccount">
+  <%- include('./layout/notifications')%>
 
-      <main>
-        <section class="textos-header">
-          <h1>Eliminar mi Cuenta</h1>
-          <h2>¿Estas seguro de eliminar tu cuenta y todos tus datos relacionados de FinaCompanion?</h2>
-        </section>
+  <main>
+    <section class="textos-header">
+      <h1>Eliminar mi Cuenta</h1>
+      <h2>¿Estas seguro de eliminar tu cuenta y todos tus datos relacionados de FinaCompanion?</h2>
+    </section>
 
-        <div class="contenedor-introduce-tu-contrasena">
-          <img src="/public/img/deleteAccount1.svg" alt="">
-          <div class="contenido-textos">
-            <h3><span></span>Por favor Introduce tu contraseña</h3>
-          </div>
-        </div>
+    <div class="contenedor-introduce-tu-contrasena">
+      <img src="/public/img/deleteAccount1.svg" alt="">
+      <div class="contenido-textos">
+        <h3><span></span>Por favor Introduce tu contraseña</h3>
+      </div>
+    </div>
 
-        <form action="/deleteAccount" method="POST">
+    <form action="/deleteAccount" method="POST">
 
-          <label for="password" id="labelPassword">
-            <br />
-            <input type="password" name="password" id="password" required>
-            <i class="fa-regular fa-eye" id="eyeOpen" onclick="changeInput()"></i>
-            <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
-          </label>
+      <label for="password" id="labelPassword">
+        <br />
+        <input type="password" name="password" id="password" required>
+        <i class="fa-regular fa-eye" id="eyeOpen" onclick="changeInput()"></i>
+        <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
+      </label>
 
-          <div id="Content-Buttons">
-            <button>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              CONTINUAR
-            </button>
-            <button>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              CANCELAR
-            </button>
-          </div>
+      <div id="Content-Buttons">
+        <button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          CONTINUAR
+        </button>
+        <button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          CANCELAR
+        </button>
+      </div>
 
-        </form>
+    </form>
 
-      </main>
+  </main>
 
-      <script type="text/javascript">
-
-        function changeInput() {
-          let inputCh = document.getElementById('password');
-          let eyeOpen = document.getElementById('eyeOpen');
-          let eyeClose = document.getElementById('eyeClose');
-          (inputCh.type == "text") ? (inputCh.type = "password") : (inputCh.type = "text")
-          eyeOpen.classList.toggle('hide');
-          eyeClose.classList.toggle('hide');
-        }
-
-      </script>
-
-  </body>
+  <script type="text/javascript">
+    function changeInput() {
+      let inputCh = document.getElementById('password');
+      let eyeOpen = document.getElementById('eyeOpen');
+      let eyeClose = document.getElementById('eyeClose');
+      (inputCh.type == "text") ? (inputCh.type = "password") : (inputCh.type = "text")
+      eyeOpen.classList.toggle('hide');
+      eyeClose.classList.toggle('hide');
+    }
+  </script>
 
   <%- include('./layout/footer') %>
+</body>
+
+<%- include('./layout/closeHtml') %>
