@@ -1,0 +1,179 @@
+body#deleteAccount {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body#deleteAccount main {
+    /* grid-template-columns: 1fr 1fr; */
+    display: flex;
+    width: 100%;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    border-radius: 15px;
+    height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 1em; */
+    /* overflow: auto; */
+}
+
+body#deleteAccount section#includeForm,
+body#deleteAccount form {
+    text-align: center;
+    margin-bottom: 2.5em;
+}
+
+body#deleteAccount section#includeForm {
+    background-color: rgb(153, 34, 193);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    /* margin-right: 1em; */
+    align-items: center;
+}
+
+body#deleteAccount section#includeForm img {
+    width: 30em;
+    margin-top: 1em;
+}
+
+body#deleteAccount h1 {
+    font-weight: bold;
+    font-size: 3em;
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+body#deleteAccount h2 {
+    font-weight:100;
+    font-size: 2em;
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+body#deleteAccount h1~p {
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #0000008a;
+}
+
+body#deleteAccount form {
+    margin-top: 2em;
+    align-items: center;
+}
+
+body#deleteAccount form label {
+    width: 100%;
+    text-align: left;
+}
+
+body#deleteAccount label {
+    margin-bottom: 1em;
+}
+
+body#deleteAccount label#labelPassword,
+body#deleteAccount label#labelConfPassword {
+    position: relative;
+}
+
+body#deleteAccount label#labelPassword>i,
+body#deleteAccount label#labelConfPassword>i {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    cursor: pointer;
+}
+
+body#deleteAccount label#labelPassword>input#password:not(.termsAndCondi),
+body#deleteAccount label#labelPassword>input#confPassword:not(.termsAndCondi) {
+    width: calc(100% - 23px);
+    padding-right: 23px;
+}
+
+
+body#deleteAccount input:not(.termsAndCondi),
+body#deleteAccount input:focus:not(.termsAndCondi) {
+    border: 0px;
+    border-bottom: 2px rgb(23, 0, 43) solid;
+    width: 100%;
+    outline: none;
+}
+
+body#deleteAccount button {
+    position: relative;
+    padding: 10px 40px;
+    color: #dcc2e4;
+    background: #370066;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+}
+
+body#deleteAccount button:hover {
+    color: white;
+}
+
+body#deleteAccount button span {
+    position: absolute;
+    background: white;
+    transition: .5s;
+}
+
+body#deleteAccount button span:nth-child(1) {
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: -100%;
+}
+
+body#deleteAccount button span:nth-child(2) {
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    right: -100%;
+}
+
+body#deleteAccount button span:nth-child(3) {
+    width: 1;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+}
+
+body#deleteAccount button span:nth-child(4) {
+    width: 1px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+}
+
+body#deleteAccount button:hover span:nth-child(1) {
+    left: 0;
+}
+
+body#deleteAccount button:hover span:nth-child(2) {
+    right: 0;
+}
+
+body#deleteAccount button:hover span:nth-child(3) {
+    bottom: 0;
+}
+
+body#deleteAccount button:hover span:nth-child(4) {
+    top: 0;
+}
+
+body#deleteAccount div#Content-Buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 2em;
+}

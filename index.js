@@ -87,6 +87,9 @@ app.post("/login", verifySession, login);
 app.get("/", verifySession, login);
 app.post("/", verifySession, login);
 
+const deleteAccount = require("./controller/deleteAccount");
+app.get("/deleteAccount", verifySession, deleteAccount);
+
 const createAccount = require("./controller/createAccount");
 app.get("/createAccount", verifySession, createAccount);
 app.post("/createAccount", verifySession, createAccount);
