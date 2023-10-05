@@ -24,7 +24,6 @@ module.exports = async (req, res) => {
   switch (TypeRequest) {
     case "GET":
       if (req.path == "/recoveryPassword") {
-        req.session.validationEmail = null;
         res.render("recoveryPassword", {
           validationErrors,
           validationSuccess,
