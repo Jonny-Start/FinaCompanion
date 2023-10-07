@@ -1,0 +1,144 @@
+body#contact {
+    margin: 0;
+    padding: 0;
+    background-color: #22252a;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+body#contact main {
+    /* grid-template-columns: 1fr 1fr; */
+    display: grid;
+    grid-template-columns: 65% 35%;
+    padding: 1em;
+    background-color: #22252a;
+    width: 100%;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    border-radius: 15px;
+    height: 90vh;
+    /* gap: 1em; */
+    /* overflow: auto; */
+}
+
+body#contact section#includeImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body#contact section#includeImg img {
+    width: 35em;
+}
+
+body#contact section#includeForm,
+body#contact form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+body#contact section#includeForm {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    /* margin-right: 1em; */
+    align-items: center;
+}
+
+body#contact h1 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+body#contact h1~p {
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #0000008a;
+}
+
+body#contact form {
+    margin-top: 2em;
+    align-items: center;
+    width: 15em;
+}
+
+body#contact form label {
+    width: 100%;
+    text-align: left;
+}
+
+body#contact label#labelEmail {
+    margin-bottom: 2em;
+}
+
+body#contact label#labelPassword {
+    position: relative;
+}
+
+body#contact label#labelPassword>i {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    cursor: pointer;
+}
+
+body#contact label#labelPassword>input#password {
+    width: calc(100% - 23px);
+    padding-right: 23px;
+}
+
+
+body#contact input,
+body#contact input:focus {
+    border: 0px;
+    border-bottom: 2px black solid;
+    width: 100%;
+    outline: none;
+}
+
+body#contact input:focus {
+    border-color: #6f7eff;
+}
+
+body#contact a#recovery {
+    width: 100%;
+    text-align: right;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    color: #00000073;
+    margin-bottom: 3em;
+}
+
+body#contact button {
+    width: 12em;
+    line-height: 2.3em;
+    color: white;
+    border-radius: 10px;
+    background-color: #22252a;
+    border: 0px;
+}
+
+body#contact button~p {
+    position: relative;
+    margin-top: 5em;
+}
+
+
+@media contact and (max-width: 1000px) {
+    body#contact main {
+        grid-template-columns: 1fr;
+    }
+
+    body#contact main section#includeImg {
+        display: none;
+    }
+}
