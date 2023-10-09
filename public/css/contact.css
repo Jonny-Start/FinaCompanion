@@ -1,4 +1,4 @@
-body#contact {
+/*body#contact {
     margin: 0;
     padding: 0;
     background-color: #22252a;
@@ -10,7 +10,6 @@ body#contact {
 }
 
 body#contact main {
-    /* grid-template-columns: 1fr 1fr; */
     display: grid;
     grid-template-columns: 65% 35%;
     padding: 1em;
@@ -20,20 +19,7 @@ body#contact main {
     margin-right: 4vw;
     border-radius: 15px;
     height: 90vh;
-    /* gap: 1em; */
-    /* overflow: auto; */
-}
-
-body#contact section#includeImg {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-body#contact section#includeImg img {
-    width: 35em;
-}
+}*/
 
 body#contact section#includeForm,
 body#contact form {

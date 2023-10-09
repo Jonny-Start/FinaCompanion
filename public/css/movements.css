@@ -1,8 +1,6 @@
-body#movements {
+/*body#movements {
     margin: 0;
     padding: 0;
-    background-color: #22252a;
-
     height: 100vh;
     display: flex;
     align-items: center;
@@ -10,21 +8,18 @@ body#movements {
 }
 
 body#movements main {
-    /* grid-template-columns: 1fr 1fr; */
     display: grid;
     grid-template-columns: 65% 35%;
     padding: 1em;
-    background-color: #22252a;
     width: 100%;
     margin-left: 4vw;
     margin-right: 4vw;
     border-radius: 15px;
     height: 90vh;
-    /* gap: 1em; */
-    /* overflow: auto; */
-}
 
-body#movements section#includeImg {
+}*/
+
+/*body#movements section#includeImg {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,6 +29,15 @@ body#movements section#includeImg {
 body#movements section#includeImg img {
     width: 35em;
 }
+*/
+
+table { 
+    border-collapse: collapse; 
+} 
+
+td, th /* Poner borde en td y th */ { 
+    border: 1px solid black;
+} 
 
 body#movements section#includeForm,
 body#movements form {

@@ -4,10 +4,6 @@
   <%- include('./layout/notifications')%>
 
   <main>
-    <section id="includeImg">
-      <img src="public/img/logoTexto.png" alt="Logo de FinaCompanion">
-    </section>
-
     <section id="includeForm">
 
       <h1>Agregar movimientos</h1>
@@ -16,8 +12,12 @@
 
       <form action="/debts" method="POST">
 
-        
-
+        <label for="Saldo" id="labelSaldo">Ingrese el monto
+          <br />
+          <input type="text" name="fullSaldo" id="fullSaldo" required>
+        </label>
+        <p>
+          
         <button type="submit" id="sendForm">Aceptar</button>
         <button type="submit" id="sendForm">Cancelar</button>
       </form>

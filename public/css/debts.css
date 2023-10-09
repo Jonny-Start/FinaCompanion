@@ -1,4 +1,4 @@
-body#debts {
+/*body#debts {
     margin: 0;
     padding: 0;
     background-color: #22252a;
@@ -10,7 +10,6 @@ body#debts {
 }
 
 body#debts main {
-    /* grid-template-columns: 1fr 1fr; */
     display: grid;
     grid-template-columns: 65% 35%;
     padding: 1em;
@@ -20,11 +19,9 @@ body#debts main {
     margin-right: 4vw;
     border-radius: 15px;
     height: 90vh;
-    /* gap: 1em; */
-    /* overflow: auto; */
-}
+}*/
 
-body#debts section#includeImg {
+/*body#debts section#includeImg {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -33,7 +30,7 @@ body#debts section#includeImg {
 
 body#debts section#includeImg img {
     width: 35em;
-}
+}*/
 
 body#debts section#includeForm,
 body#debts form {
