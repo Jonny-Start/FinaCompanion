@@ -90,8 +90,8 @@ app.get("/codeEmail", verifySession, codeEmail);
 app.post("/codeEmail", verifySession, codeEmail);
 
 const contact = require("./controller/contact");
-app.get("/codeEmail", verifySession, contact);
-app.post("/codeEmail", verifySession, contact);
+app.get("/contact", verifySession, contact);
+app.post("/contact", verifySession, contact);
 
 const createAccount = require("./controller/createAccount");
 app.get("/createAccount", verifySession, createAccount);

@@ -10,21 +10,14 @@
 
     <section id="includeForm">
 
-      <img src="public/img/icono.png" alt="Logo de FinaCompanion">
-      <h1>¿Olvido la contraseña?</h1>
-      <p>Por favor ingrese el correo electrónico para el que desea recuperar la contraseña
+      <h1>Historial</h1>
+      <p>Sus movimientos son:
       <p>
 
-      <form action="/recoveryPassword" method="POST">
+      <form action="/movements" method="POST">
+        
 
-        <label for="email" id="labelEmail">Ingrese el correo electrónico
-          <br />
-          <input type="email" name="email" id="email" required>
-        </label>
-
-        <button type="submit" id="sendForm">Aceptar</button>
-
-        <p>¿Ya tienes cuenta? <a href="/login">Iniciar sesion</a></p>
+        <button type="submit" id="sendForm">Regresar</button>
       </form>
     </section>
 

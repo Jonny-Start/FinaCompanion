@@ -1,4 +1,4 @@
-body#dataUpdate {
+body#debts {
     margin: 0;
     padding: 0;
     background-color: #22252a;
@@ -9,12 +9,12 @@ body#dataUpdate {
 
 }
 
-body#dataUpdate main {
+body#debts main {
     /* grid-template-columns: 1fr 1fr; */
     display: grid;
     grid-template-columns: 65% 35%;
     padding: 1em;
-    background-color: #eeeeee;
+    background-color: #22252a;
     width: 100%;
     margin-left: 4vw;
     margin-right: 4vw;
@@ -24,26 +24,26 @@ body#dataUpdate main {
     /* overflow: auto; */
 }
 
-body#dataUpdate section#includeImg {
+body#debts section#includeImg {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-body#dataUpdate section#includeImg img {
-    width: 27em;
+body#debts section#includeImg img {
+    width: 35em;
 }
 
-body#dataUpdate section#includeForm,
-body#dataUpdate form {
+body#debts section#includeForm,
+body#debts form {
     background-color: white;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-body#dataUpdate section#includeForm {
+body#debts section#includeForm {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -53,74 +53,67 @@ body#dataUpdate section#includeForm {
     align-items: center;
 }
 
-
-body#dataUpdate section#includeForm img {
-    width: 2em;
-    filter: opacity(0.7);
-    margin-top: 1em;
-}
-
-body#dataUpdate h1 {
+body#debts h1 {
     font-weight: bold;
     font-size: 2em;
     margin-bottom: 0;
 }
 
-body#dataUpdate h1~p {
+body#debts h1~p {
     margin-top: 0;
     font-size: 0.9em;
     color: #0000008a;
 }
 
-body#dataUpdate button {
+body#debts button {
     width: 5em;
 }
 
-body#dataUpdate form {
+body#debts form {
     margin-top: 2em;
     align-items: center;
     width: 15em;
 }
 
-body#dataUpdate form label {
+body#debts form label {
     width: 100%;
     text-align: left;
 }
 
-body#dataUpdate label#labelEmail {
+body#debts label#labelEmail {
     margin-bottom: 2em;
 }
 
-body#dataUpdate label#labelPassword {
+body#debts label#labelPassword {
     position: relative;
 }
 
-body#dataUpdate label#labelPassword>i {
+body#debts label#labelPassword>i {
     position: absolute;
     right: 0px;
     top: 20px;
     cursor: pointer;
 }
 
-body#dataUpdate label#labelPassword>input#password {
+body#debts label#labelPassword>input#password {
     width: calc(100% - 23px);
     padding-right: 23px;
 }
 
 
-body#dataUpdate input,
-body#dataUpdate input:focus {
+body#debts input,
+body#debts input:focus {
     border: 0px;
     border-bottom: 2px black solid;
     width: 100%;
     outline: none;
 }
 
-body#dataUpdate input:focus {
+body#debts input:focus {
     border-color: #6f7eff;
 }
 
-body#dataUpdate a#recovery {
+body#debts a#recovery {
     width: 100%;
     text-align: right;
     font-size: 0.9em;
@@ -129,7 +122,7 @@ body#dataUpdate a#recovery {
     margin-bottom: 3em;
 }
 
-body#dataUpdate button {
+body#debts button {
     width: 12em;
     line-height: 2.3em;
     color: white;
@@ -138,18 +131,18 @@ body#dataUpdate button {
     border: 0px;
 }
 
-body#dataUpdate button~p {
+body#debts button~p {
     position: relative;
     margin-top: 5em;
 }
 
 
 @media screen and (max-width: 1000px) {
-    body#dataUpdate main {
+    body#debts main {
         grid-template-columns: 1fr;
     }
 
-    body#dataUpdate main section#includeImg {
+    body#debts main section#includeImg {
         display: none;
     }
 }

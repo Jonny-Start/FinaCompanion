@@ -10,21 +10,30 @@
 
     <section id="includeForm">
 
-      <img src="public/img/icono.png" alt="Logo de FinaCompanion">
-      <h1>¿Olvido la contraseña?</h1>
-      <p>Por favor ingrese el correo electrónico para el que desea recuperar la contraseña
+      <h1>Actualización de Datos</h1>
+      <p>Ingrese los datos que requiere modificar
       <p>
 
-      <form action="/recoveryPassword" method="POST">
+      <form action="/dataUpdate" method="POST">
 
-        <label for="email" id="labelEmail">Ingrese el correo electrónico
+        <label for="fullName" id="labelFullName">Nombre completo
           <br />
-          <input type="email" name="email" id="email" required>
+          <input type="text" name="fullName" id="fullName" required>
         </label>
 
-        <button type="submit" id="sendForm">Aceptar</button>
+        <label for="phoneNumber" id="labelPhoneNumber">Numero telefonico
+          <br />
+          <input type="number" name="phoneNumber" id="phoneNumber" required>
+        </label>
 
-        <p>¿Ya tienes cuenta? <a href="/login">Iniciar sesion</a></p>
+        <span id="terminosCondiciones">
+          <input type="checkbox" name="termsAndCondi" id="termsAndCondi" onclick="validateTerm(this)">
+          <p>Acepto los <a href="#"> terminos y condiciones </a></p>
+        </span>
+
+        <button type="submit" id="sendForm">Aceptar</button>
+        <button type="submit" id="sendForm">Cancelar</button>
+
       </form>
     </section>
 
