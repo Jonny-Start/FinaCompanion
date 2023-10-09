@@ -10,38 +10,38 @@
 
     <section id="includeForm">
 
-      <img src="public/img/icono.png" alt="Logo de FinaCompanion">
+      <!-- <img src="public/img/icono.png" alt="Logo de FinaCompanion"> -->
 
       <h1>Crea una cuenta</h1>
       <p>Por favor ingresa todos los datos solicitados</p>
 
       <form action="/createAccount" method="POST">
 
-        <label for="fullName" id="labelFullName">Nombre completo
+        <label for="fullName" id="labelFullName">
           <br />
-          <input type="text" name="fullName" id="fullName" required>
+          <input type="text" name="fullName" id="fullName" placeholder="Nombre completo" required>
         </label>
 
-        <label for="phoneNumber" id="labelPhoneNumber">Numero telefonico
+        <label for="phoneNumber" id="labelPhoneNumber">
           <br />
-          <input type="number" name="phoneNumber" id="phoneNumber" required>
+          <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Numero telefonico" required>
         </label>
 
-        <label for="email" id="labelEmail">Correo electronico
+        <label for="email" id="labelEmail">
           <br />
-          <input type="email" name="email" id="email" required>
+          <input type="email" name="email" id="email" placeholder="Correo electronico" required>
         </label>
 
-        <label for="password" id="labelPassword">Contraseña
+        <label for="password" id="labelPassword">
           <br />
-          <input type="password" name="password" id="password" required>
+          <input type="password" name="password" id="password" placeholder="Contraseña" required>
           <i class="fa-regular fa-eye" id="eyeOpen" onclick="changeInput()"></i>
           <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
         </label>
 
-        <label for="confPassword" id="labelConfPassword">Confirmar contraseña
+        <label for="confPassword" id="labelConfPassword">
           <br />
-          <input type="password" name="confPassword" id="confPassword" required>
+          <input type="password" name="confPassword" id="confPassword" placeholder="Confirmar contraseña" required>
           <i class="fa-regular fa-eye" id="eyeOpenConf" onclick="changeInputConf()"></i>
           <i class="fa-regular fa-eye-slash hide" id="eyeCloseConf" onclick="changeInputConf()"></i>
         </label>

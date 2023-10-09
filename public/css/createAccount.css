@@ -14,7 +14,7 @@ body#createAccount main {
     display: grid;
     grid-template-columns: 65% 35%;
     padding: 1em;
-    background-color: #eeeeee;
+    background-color: #22252a;
     width: 100%;
     margin-left: 4vw;
     margin-right: 4vw;
@@ -32,7 +32,7 @@ body#createAccount section#includeImg {
 }
 
 body#createAccount section#includeImg img {
-    width: 27em;
+    width: 35em;
 }
 
 body#createAccount section#includeForm,
