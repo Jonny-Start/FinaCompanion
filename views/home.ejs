@@ -1,8 +1,8 @@
 <%- include('./layout/head', { NAME_CSS: "home" }) %>
 
-<body id="home">
+<body id="home" onload="activeOptionFooter('Add')">
+  <%- include('./layout/header')%>
   <%- include('./layout/notifications')%>
-  <a href="/closeSession" id="exitSession"><i class="fa-solid fa-arrow-left"></i> Salir</a>
 
   <h1>Hola home</h1>
   <%- include('./layout/footer') %>
