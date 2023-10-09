@@ -1,0 +1,131 @@
+body#dataUpdate {
+    margin: 0;
+    padding: 0;
+    background-color: #22252a;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+body#dataUpdate main {
+    /* grid-template-columns: 1fr 1fr; */
+    display: grid;
+    grid-template-columns: 65% 35%;
+    padding: 1em;
+    background-color: #22252a;
+    width: 100%;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    border-radius: 15px;
+    height: 90vh;
+    /* gap: 1em; */
+    /* overflow: auto; */
+}
+
+body#dataUpdate section#includeImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body#dataUpdate section#includeImg img {
+    width: 35em;
+}
+
+body#dataUpdate section#includeForm,
+body#dataUpdate form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+body#dataUpdate section#includeForm {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    /* margin-right: 1em; */
+    align-items: center;
+}
+
+body#dataUpdate h1 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+body#dataUpdate h1~p {
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #0000008a;
+}
+
+body#dataUpdate button {
+    width: 5em;
+}
+
+body#dataUpdate form {
+    margin-top: 2em;
+    align-items: center;
+    width: 15em;
+}
+
+body#dataUpdate form label {
+    width: 100%;
+    text-align: left;
+}
+
+body#dataUpdate label#labelEmail {
+    margin-bottom: 2em;
+}
+
+body#dataUpdate input,
+body#dataUpdate input:focus {
+    border: 0px;
+    border-bottom: 2px black solid;
+    width: 100%;
+    outline: none;
+}
+
+body#dataUpdate input:focus {
+    border-color: #6f7eff;
+}
+
+body#dataUpdate a#recovery {
+    width: 100%;
+    text-align: right;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    color: #00000073;
+    margin-bottom: 3em;
+}
+
+body#dataUpdate button {
+    width: 12em;
+    line-height: 2.3em;
+    color: white;
+    border-radius: 10px;
+    background-color: #22252a;
+    border: 0px;
+}
+
+body#dataUpdate button~p {
+    position: relative;
+    margin-top: 5em;
+}
+
+
+@media screen and (max-width: 1000px) {
+    body#dataUpdate main {
+        grid-template-columns: 1fr;
+    }
+
+    body#dataUpdate main section#includeImg {
+        display: none;
+    }
+}

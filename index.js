@@ -81,30 +81,50 @@ app.get("/closeSession", (req, res) => {
   });
 });
 
+const changePassword = require("./controller/changePassword");
+app.get("/changePassword", verifySession, changePassword);
+app.post("/changePassword", verifySession, changePassword);
+
+const codeEmail = require("./controller/codeEmail");
+app.get("/codeEmail", verifySession, codeEmail);
+app.post("/codeEmail", verifySession, codeEmail);
+
+const contact = require("./controller/contact");
+app.get("/contact", verifySession, contact);
+app.post("/contact", verifySession, contact);
+
+const createAccount = require("./controller/createAccount");
+app.get("/createAccount", verifySession, createAccount);
+app.post("/createAccount", verifySession, createAccount);
+
+const dataUpdate = require("./controller/dataUpdate");
+app.get("/dataUpdate", verifySession, dataUpdate);
+app.post("/dataUpdate", verifySession, dataUpdate);
+
+const debts = require("./controller/debts");
+app.get("/debts", verifySession, debts);
+app.post("/debts", verifySession, debts);
+
+const deleteAccount = require("./controller/deleteAccount");
+app.get("/deleteAccount", verifySession, deleteAccount);
+app.post("/deleteAccount", verifySession, deleteAccount);
+
+const home = require("./controller/home");
+app.get("/home", verifySession, home);
+
 const login = require("./controller/login");
 app.get("/login", verifySession, login);
 app.post("/login", verifySession, login);
 app.get("/", verifySession, login);
 app.post("/", verifySession, login);
 
-const deleteAccount = require("./controller/deleteAccount");
-app.get("/deleteAccount", verifySession, deleteAccount);
-app.post("/deleteAccount", verifySession, deleteAccount);
-
-const createAccount = require("./controller/createAccount");
-app.get("/createAccount", verifySession, createAccount);
-app.post("/createAccount", verifySession, createAccount);
+const movements = require("./controller/movements");
+app.get("/movements", verifySession, movements);
+app.post("/movements", verifySession, movements);
 
 const recoveryPassword = require("./controller/recoveryPassword");
 app.get("/recoveryPassword", verifySession, recoveryPassword);
 app.post("/recoveryPassword", verifySession, recoveryPassword);
-
-const codeEmail = require("./controller/codeEmail");
-app.get("/codeEmail", verifySession, codeEmail);
-app.post("/codeEmail", verifySession, codeEmail);
-
-const home = require("./controller/home");
-app.get("/home", verifySession, home);
 
 // app.get("/", (req, res) => {
 //   const data = {

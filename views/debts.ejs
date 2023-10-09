@@ -1,0 +1,28 @@
+<%- include('./layout/head', { NAME_CSS: "debts" }) %>
+
+<body id="debts">
+  <%- include('./layout/notifications')%>
+
+  <main>
+    <section id="includeForm">
+
+      <h1>Agregar movimientos</h1>
+      <p>Por favor ingrese el .....
+      <p>
+
+      <form action="/debts" method="POST">
+
+        <label for="Saldo" id="labelSaldo">Ingrese el monto
+          <br />
+          <input type="text" name="fullSaldo" id="fullSaldo" required>
+        </label>
+        <p>
+          
+        <button type="submit" id="sendForm">Aceptar</button>
+        <button type="submit" id="sendForm">Cancelar</button>
+      </form>
+    </section>
+
+</body>
+
+<%- include('./layout/closeHtml') %>

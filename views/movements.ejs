@@ -1,0 +1,27 @@
+<%- include('./layout/head', { NAME_CSS: "movements" }) %>
+
+<body id="movements">
+  <%- include('./layout/notifications')%>
+
+  <main>
+
+    <section id="includeForm">
+
+      <h1>Historial</h1>
+      <p>Sus movimientos son:
+      <p>
+
+      <form action="/movements" method="POST">
+
+        <table> 
+          <tr> <td>Item</td> <td>Fecha</td> <td>Nombre</td> <td>Saldo</td> </tr> 
+          <tr> <td>......</td> <td>......</td> <td>......</td> <td>......</td> </tr> 
+        </table> 
+        <p>
+        <button type="submit" id="sendForm">Regresar</button>
+      </form>
+    </section>
+
+</body>
+
+<%- include('./layout/closeHtml') %>

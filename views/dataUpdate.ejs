@@ -1,0 +1,42 @@
+<%- include('./layout/head', { NAME_CSS: "dataUpdate" }) %>
+
+<body id="dataUpdate">
+  <%- include('./layout/notifications')%>
+
+  <main>
+    <section id="includeImg">
+      <img src="public/img/logoTexto.png" alt="Logo de FinaCompanion">
+    </section>
+
+    <section id="includeForm">
+
+      <h1>Actualización de Datos</h1>
+      <p>Ingrese los datos que requiere modificar
+      <p>
+
+      <form action="/dataUpdate" method="POST">
+
+        <label for="fullName" id="labelFullName">Nombre completo
+          <br />
+          <input type="text" name="fullName" id="fullName" required>
+        </label>
+
+        <label for="phoneNumber" id="labelPhoneNumber">Numero telefonico
+          <br />
+          <input type="number" name="phoneNumber" id="phoneNumber" required>
+        </label>
+
+        <span id="terminosCondiciones">
+          <input type="checkbox" name="termsAndCondi" id="termsAndCondi" onclick="validateTerm(this)">
+          <p>Acepto los <a href="#"> terminos y condiciones </a></p>
+        </span>
+
+        <button type="submit" id="sendForm">Aceptar</button>
+        <button type="submit" id="sendForm">Cancelar</button>
+
+      </form>
+    </section>
+
+</body>
+
+<%- include('./layout/closeHtml') %>
