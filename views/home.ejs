@@ -4,7 +4,46 @@
   <%- include('./layout/header')%>
   <%- include('./layout/notifications')%>
 
+  <section id="contenedorTarjetas">
+    <div class="textDescriptionTarget">
+      <p>Mis finanzas</p>
+      <span>10 de Octubre de 2023</span>
+    </div>
+    <section class="targetPrin" id="targetPrinUp">
+      <div class="icono">
+        <i class="fa-solid fa-arrow-up"></i>
+      </div>
+      <div class="data">
+        <span>Generado este mes</span>
+        <h3>$600.200</h3>
+        <p>Mi saldo hasta el dia de hoy</p>
+      </div>
+    </section>
+
+    <section class="targetPrin" id="targetPrinDown">
+      <div class="icono">
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+      <div class="data">
+        <span>Saldo gastado este mes</span>
+        <h3>$898.974</h3>
+        <p>Mis gastos hasta el dia de hoy</p>
+      </div>
+    </section>
+  </section>
+
+
   <h1>Hola home</h1>
+  <span class="material-symbols-outlined">
+    stacked_line_chart
+  </span>
+
+  <span class="material-symbols-outlined">
+    line_axis
+  </span>
+
+
+
   <%- include('./layout/footer') %>
 </body>
 <%- include('./layout/closeHtml') %>
