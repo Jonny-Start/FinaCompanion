@@ -116,6 +116,9 @@ body#deleteAccount button {
     cursor: pointer;
     transition: .5s;
     overflow: hidden;
+    border-radius: 2px;
+    width:180px;
+    height:35px;
 }
 
 body#deleteAccount button:hover {
@@ -124,33 +127,33 @@ body#deleteAccount button:hover {
 
 body#deleteAccount button span {
     position: absolute;
-    background: white;
+    background: rgb(227, 2, 247);
     transition: .5s;
 }
 
 body#deleteAccount button span:nth-child(1) {
     width: 100%;
-    height: 1px;
+    height: 2px;
     top: 0;
     left: -100%;
 }
 
 body#deleteAccount button span:nth-child(2) {
     width: 100%;
-    height: 1px;
+    height: 2px;
     bottom: 0;
     right: -100%;
 }
 
 body#deleteAccount button span:nth-child(3) {
-    width: 1;
+    width: 2px;
     height: 100%;
     bottom: -100%;
     left: 0;
 }
 
 body#deleteAccount button span:nth-child(4) {
-    width: 1px;
+    width: 2px;
     height: 100%;
     top: -100%;
     right: 0;
