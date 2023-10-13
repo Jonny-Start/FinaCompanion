@@ -109,8 +109,8 @@ body#deleteAccount input:focus:not(.termsAndCondi) {
 body#deleteAccount button {
     position: relative;
     padding: 10px 40px;
-    color: #dcc2e4;
-    background: #370066;
+    color: white;
+    background: #22252a;
     border: none;
     outline: none;
     cursor: pointer;
@@ -122,7 +122,7 @@ body#deleteAccount button {
 }
 
 body#deleteAccount button:hover {
-    color: white;
+    color:#dcc2e4;
 }
 
 body#deleteAccount button span {
@@ -179,4 +179,5 @@ body#deleteAccount div#Content-Buttons {
     display: flex;
     gap: 10px;
     margin-top: 2em;
+    margin-bottom: 5em;
 }

@@ -32,7 +32,7 @@ body#createAccount section#includeImg {
 }
 
 body#createAccount section#includeImg img {
-    width: 35em;
+    width: 45em;
 }
 
 body#createAccount section#includeForm,
@@ -133,19 +133,33 @@ body#createAccount a#recovery {
 }
 
 body#createAccount button {
-    width: 12em;
-    line-height: 2.3em;
+    position: relative;
+    padding: 10px 40px;
     color: white;
-    border-radius: 10px;
-    background-color: #22252a;
-    border: 0px;
-    margin-top: 1.5em;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    border-radius: 2px;
+    width:180px;
+    height:35px;
+}
+
+body#createAccount Button {
+    margin-top: 2em;
+}
+
+body#createAccount button:hover {
+    color:#dcc2e4;
 }
 
 body#createAccount button~p {
     position: relative;
-    margin-top: 2em;
+    margin-top: 5em;
 }
+
 
 body#createAccount label#labelConfPassword {
     margin-bottom: 0;

@@ -120,12 +120,28 @@ body#debts a#recovery {
 }
 
 body#debts button {
-    width: 12em;
-    line-height: 2.3em;
+    position: relative;
+    padding: 10px 40px;
     color: white;
-    border-radius: 10px;
-    background-color: #22252a;
-    border: 0px;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    border-radius: 2px;
+    width:180px;
+    height:35px;
+}
+
+body#debts div#Content-Buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 2em;
+}
+
+body#debts button:hover {
+    color:#dcc2e4;
 }
 
 body#debts button~p {
