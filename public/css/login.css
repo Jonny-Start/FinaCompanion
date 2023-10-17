@@ -14,15 +14,16 @@ body#login main {
     display: grid;
     grid-template-columns: 65% 35%;
     padding: 1em;
-    background-color: #eeeeee;
     width: 100%;
     margin-left: 4vw;
     margin-right: 4vw;
     border-radius: 15px;
     height: 90vh;
+    background-color: #eeeeee;
     /* gap: 1em; */
     /* overflow: auto; */
 }
+
 
 body#login section#includeImg {
     display: flex;
@@ -32,7 +33,7 @@ body#login section#includeImg {
 }
 
 body#login section#includeImg img {
-    width: 27em;
+    width: 45em;
 }
 
 body#login section#includeForm,
@@ -130,13 +131,74 @@ body#login a#recovery {
 }
 
 body#login button {
-    width: 12em;
-    line-height: 2.3em;
+    position: relative;
+    padding: 10px 40px;
     color: white;
-    border-radius: 10px;
-    background-color: #22252a;
-    border: 0px;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    border-radius: 2px;
+    width:180px;
+    height:35px;
 }
+body#login button:hover {
+    color: #dcc2e4;
+}
+
+body#login button span {
+    position: absolute;
+    background: rgb(227, 2, 247);
+    transition: .5s;
+    border-radius: 10px;
+}
+
+body#login button span:nth-child(1) {
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: -100%;
+}
+
+body#login button span:nth-child(2) {
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    right: -100%;
+}
+
+body#login button span:nth-child(3) {
+    width: 2px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+}
+
+body#login button span:nth-child(4) {
+    width: 2px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+}
+
+body#login button:hover span:nth-child(1) {
+    left: 0;
+}
+
+body#login button:hover span:nth-child(2) {
+    right: 0;
+}
+
+body#login button:hover span:nth-child(3) {
+    bottom: 0;
+}
+
+body#login button:hover span:nth-child(4) {
+    top: 0;
+}
+
 
 body#login button~p {
     position: relative;
