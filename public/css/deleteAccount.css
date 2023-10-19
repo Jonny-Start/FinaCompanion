@@ -20,6 +20,7 @@ body#deleteAccount main {
     align-items: center;
     /* gap: 1em; */
     /* overflow: auto; */
+    /*margin-top: 4em; */
 }
 
 body#deleteAccount section#includeForm,

@@ -3,10 +3,15 @@
 <body id="dataUpdate">
   <%- include('./layout/notifications')%>
 
+  <%- include('./layout/header')%>
+
+  <div style="height: 150px; overflow: hidden; width: 100%; position: fixed; top:0; left: 0; z-index: 15;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+      <path d="M-1.46,149.10 C152.59,30.99 275.05,127.45 501.35,149.10 L500.00,-0.00 L-0.00,-0.00 Z" style="stroke: none; fill: rgb(138 111 239);"></path>
+    </svg>
+  </div>
+
   <main>
-    <section id="includeImg">
-      <img src="public/img/logoTexto.png" alt="Logo de FinaCompanion">
-    </section>
 
     <section id="includeForm">
 
@@ -16,26 +21,27 @@
 
       <form action="/dataUpdate" method="POST">
 
-        <label for="fullName" id="labelFullName">Nombre completo
+        <label for="fullName" id="labelFullName">
           <br />
-          <input type="text" name="fullName" id="fullName" required>
+          <input type="text" name="fullName" id="fullName" placeholder="Nombre Completo" required>
         </label>
 
-        <label for="phoneNumber" id="labelPhoneNumber">Numero telefonico
+        <label for="phoneNumber" id="labelPhoneNumber">
           <br />
-          <input type="number" name="phoneNumber" id="phoneNumber" required>
+          <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Numero Telefónico" required>
         </label>
 
-        <span id="terminosCondiciones">
-          <input type="checkbox" name="termsAndCondi" id="termsAndCondi" onclick="validateTerm(this)">
-          <p>Acepto los <a href="#"> terminos y condiciones </a></p>
-        </span>
+        <label for="gender" id="labelGender">
+          <br />
+          <input type="text" name="gender" id="gender" placeholder="Temporal ingresar el genero" required>
+        </label>
 
         <div id="Content-Buttons">
         <button type="submit" id="sendForm">Aceptar</button>
         <button type="submit" id="sendForm">Cancelar</button>
         </div>
 
+        <p>¿Desea cambiar la contraseña? <a href="/changePassword">Cambiar Contraseña</a></p>
       </form>
     </section>
 
