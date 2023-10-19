@@ -1,48 +1,3 @@
-body#dataUpdate {
-    margin: 0;
-    padding: 0;
-    background-color: #22252a;
-
-    height: 100vh;
-    display: flex;
-    align-items: center;
-
-}
-
-body#dataUpdate main {
-    /* grid-template-columns: 1fr 1fr; */
-    display: grid;
-    grid-template-columns: 65% 35%;
-    padding: 1em;
-    background-color: #22252a;
-    width: 100%;
-    margin-left: 4vw;
-    margin-right: 4vw;
-    border-radius: 15px;
-    height: 90vh;
-    /* gap: 1em; */
-    /* overflow: auto; */
-}
-
-body#dataUpdate section#includeImg {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-body#dataUpdate section#includeImg img {
-    width: 35em;
-}
-
-body#dataUpdate section#includeForm,
-body#dataUpdate form {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
 body#dataUpdate section#includeForm {
     background-color: white;
     display: flex;
@@ -51,6 +6,7 @@ body#dataUpdate section#includeForm {
     border-radius: 10px;
     /* margin-right: 1em; */
     align-items: center;
+    margin-top: 10em;
 }
 
 body#dataUpdate h1 {
@@ -70,7 +26,7 @@ body#dataUpdate button {
 }
 
 body#dataUpdate form {
-    margin-top: 2em;
+    margin-top: 0em;
     align-items: center;
     width: 15em;
 }

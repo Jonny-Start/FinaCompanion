@@ -1,25 +1,3 @@
-/*body#contact {
-    margin: 0;
-    padding: 0;
-    background-color: #22252a;
-
-    height: 100vh;
-    display: flex;
-    align-items: center;
-
-}
-
-body#contact main {
-    display: grid;
-    grid-template-columns: 65% 35%;
-    padding: 1em;
-    background-color: #22252a;
-    width: 100%;
-    margin-left: 4vw;
-    margin-right: 4vw;
-    border-radius: 15px;
-    height: 90vh;
-}*/
 
 body#contact section#includeForm,
 body#contact form {
@@ -37,6 +15,7 @@ body#contact section#includeForm {
     border-radius: 10px;
     /* margin-right: 1em; */
     align-items: center;
+    margin-top: 10em;
 }
 
 body#contact h1 {
@@ -49,4 +28,85 @@ body#contact h1~p {
     margin-top: 0;
     font-size: 0.9em;
     color: #0000008a;
+}
+
+body#contact button {
+    width: 5em;
+}
+
+body#contact form {
+    margin-top: 2em;
+    align-items: center;
+    width: 15em;
+}
+
+body#contact form label {
+    width: 100%;
+    text-align: left;
+}
+
+/*body#contact label#labelEmail {
+    margin-bottom: 2em;
+}*/
+
+body#contact input,
+body#contact input:focus {
+    border: 0px;
+    border-bottom: 2px black solid;
+    width: 100%;
+    outline: none;
+}
+
+body#contact input:focus {
+    border-color: #6f7eff;
+}
+
+body#contact a#recovery {
+    width: 100%;
+    text-align: right;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    color: #00000073;
+    margin-bottom: 3em;
+}
+
+body#contact button {
+    position: relative;
+    padding: 10px 40px;
+    color: white;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    border-radius: 2px;
+    width:180px;
+    height:35px;
+}
+
+body#contact div#Content-Buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 2em;
+}
+
+body#contact button:hover {
+    color:#dcc2e4;
+}
+
+body#contact button~p {
+    position: relative;
+    margin-top: 5em;
+}
+
+
+@media screen and (max-width: 1000px) {
+    body#contact main {
+        grid-template-columns: 1fr;
+    }
+
+    body#contact main section#includeImg {
+        display: none;
+    }
 }

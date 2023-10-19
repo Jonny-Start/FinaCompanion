@@ -48,6 +48,7 @@ body#debts section#includeForm {
     border-radius: 10px;
     /* margin-right: 1em; */
     align-items: center;
+    margin-top: 10em;
 }
 
 body#debts h1 {
@@ -67,7 +68,7 @@ body#debts button {
 }
 
 body#debts form {
-    margin-top: 2em;
+    margin-top: 0em;
     align-items: center;
     width: 15em;
 }
@@ -75,10 +76,6 @@ body#debts form {
 body#debts form label {
     width: 100%;
     text-align: left;
-}
-
-body#debts label#labelEmail {
-    margin-bottom: 2em;
 }
 
 body#debts label#labelPassword {

@@ -3,14 +3,41 @@
 <body id="contact">
   <%- include('./layout/notifications')%>
 
+  <%- include('./layout/header')%>
+
+  <div style="height: 150px; overflow: hidden; width: 100%; position: fixed; top:0; left: 0; z-index: 15;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+      <path d="M-1.46,149.10 C152.59,30.99 275.05,127.45 501.35,149.10 L500.00,-0.00 L-0.00,-0.00 Z" style="stroke: none; fill: rgb(138 111 239);"></path>
+    </svg>
+  </div>
+
   <main>
     <section id="includeForm">
 
       <h1>Añadir Contactos</h1>
-      <p>parrafo para poner intro
+      <p>Escriba los datos del contacto que desea agregar
 
       <form action="/contact" method="POST">
-        <p>pendiente preguntar que debe de ir en la imagen
+
+        <label for="fullName" id="labelFullName">
+          <br />
+          <input type="text" name="fullName" id="fullName" placeholder="Nombre completo" required>
+        </label>
+
+        <label for="phoneNumber" id="labelPhoneNumber">
+          <br />
+          <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Numero telefónico" required>
+        </label>
+
+        <label for="email" id="labelEmail">
+          <br />
+          <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+        </label>
+
+        <div id="Content-Buttons">
+          <button type="submit" id="sendForm">Añadir</button>
+          <button type="submit" id="sendForm">Cancelar</button>
+        </div>
 
       </form>
     </section>
