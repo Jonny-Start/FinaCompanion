@@ -8,6 +8,7 @@ function activeOptionFooter(option) {
     Contacts: "footer_contacts",
     History: "footer_history",
     Add: "footer_add",
+    Home: "footer_home",
     Overdue: "footer_overdue",
     Setting: "footer_setting",
   };

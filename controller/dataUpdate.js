@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
       if (req.path == "/dataUpdate") {
         res.render("dataupdate", {
           validationErrors,
-          validationSuccess,
+          validationSuccess
         });
       }
       break;

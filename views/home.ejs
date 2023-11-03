@@ -1,14 +1,8 @@
 <%- include('./layout/head', { NAME_CSS: "home" }) %>
 
-<body id="home" onload="activeOptionFooter('Contacts')">
+<body id="home" onload="activeOptionFooter('Home')">
   <%- include('./layout/header')%>
   <%- include('./layout/notifications')%>
-
-  <div style="height: 150px; overflow: hidden; width: 100%; position: fixed; top:0; left: 0; z-index: 15;">
-    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-      <path d="M-1.46,149.10 C152.59,30.99 275.05,127.45 501.35,149.10 L500.00,-0.00 L-0.00,-0.00 Z" style="stroke: none; fill: rgb(138 111 239);"></path>
-    </svg>
-  </div>
 
   <section id="contenedorTarjetas">
 
@@ -42,7 +36,8 @@
     </section>
   </section>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
+  <link rel="stylesheet" href="public/css/swiper-bundle.min.css" />
 
   <section id="contacts">
     <h2>Mis contactos</h2>
@@ -126,7 +121,9 @@
 
 
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+  <script src="public/js/swiper-bundle.min.js"></script>
+
 
 
   <!-- Initialize Swiper -->
@@ -137,7 +134,7 @@
       loop: true,
       centeredSlides: true,
       autoplay: {
-        delay: 1500,
+        delay: 3000,
         disableOnInteraction: false,
       },
       pagination: {

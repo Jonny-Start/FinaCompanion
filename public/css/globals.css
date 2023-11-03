@@ -38,7 +38,7 @@ footer#footerFinaCompanion {
     z-index: 20;
 }
 
-footer#footerFinaCompanion>li {
+footer#footerFinaCompanion>ul {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -56,9 +56,23 @@ footer#footerFinaCompanion>li {
     padding-left: 1em;
     padding-right: 1em;
     min-height: 36px;
+    overflow: hidden;
 }
 
-footer#footerFinaCompanion>li>ul>a {
+footer#footerFinaCompanion>ul>li {
+    width: 50px;
+    height: 29px;
+    border-radius: 18px;
+}
+
+footer#footerFinaCompanion>ul>li.active {
+    width: 50px;
+    height: 29px;
+    background-color: white;
+    border-radius: 18px;
+}
+
+footer#footerFinaCompanion>ul>li>a {
     text-decoration: none;
     color: black;
     display: block;
@@ -66,32 +80,20 @@ footer#footerFinaCompanion>li>ul>a {
     height: 100%;
 }
 
-footer#footerFinaCompanion>li>ul>a>i {
+footer#footerFinaCompanion>ul>li>a>i {
     /* font-size: 22px; */
     font-size: 22px;
     line-height: 28px;
     color: white;
 }
 
-footer#footerFinaCompanion>li>ul:hover>a>i {
+footer#footerFinaCompanion>ul>li:hover>a>i {
     color: rgb(138 111 239);
 }
 
-footer#footerFinaCompanion>li>ul {
-    width: 50px;
-    height: 29px;
-    border-radius: 18px;
-}
-
-footer#footerFinaCompanion>li>ul.active {
-    width: 50px;
-    height: 29px;
-    background-color: white;
-    border-radius: 18px;
-}
-
-footer#footerFinaCompanion>li>ul.active i {
-    color: black;
+footer#footerFinaCompanion>ul>li.active i {
+    /* color: black; */
+    color: rgb(138 111 239);
 }
 
 /****************************************
@@ -116,19 +118,22 @@ header#headerFinaCompanion {
     z-index: 20;
 }
 
-header#headerFinaCompanion a#exitSession {
+header#headerFinaCompanion a#exitSession,
+header#headerFinaCompanion a#dataUpdate {
     color: white;
     font-size: 30px;
     text-decoration: none;
     margin-right: 10px;
 }
 
-header#headerFinaCompanion a#exitSession:hover {
+header#headerFinaCompanion a#exitSession:hover,
+header#headerFinaCompanion a#dataUpdate:hover {
     color: #ff7fff;
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 
-header#headerFinaCompanion a#exitSession>i {
+header#headerFinaCompanion a#exitSession>i,
+header#headerFinaCompanion a#dataUpdate>i {
     margin-left: 7px;
 }
 

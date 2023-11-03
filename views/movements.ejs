@@ -1,15 +1,9 @@
 <%- include('./layout/head', { NAME_CSS: "movements" }) %>
 
-<body id="movements">
+<body id="movements" onload="activeOptionFooter('History')">
   <%- include('./layout/notifications')%>
 
   <%- include('./layout/header')%>
-
-  <div style="height: 150px; overflow: hidden; width: 100%; position: fixed; top:0; left: 0; z-index: 15;">
-    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-      <path d="M-1.46,149.10 C152.59,30.99 275.05,127.45 501.35,149.10 L500.00,-0.00 L-0.00,-0.00 Z" style="stroke: none; fill: rgb(138 111 239);"></path>
-    </svg>
-  </div>
 
   <main>
 
@@ -33,7 +27,7 @@
 
       </form>
     </section>
-
+  <%- include('./layout/footer') %>
 </body>
 
 <%- include('./layout/closeHtml') %>

@@ -1,50 +1,48 @@
 <%- include('./layout/head', { NAME_CSS: "debts" }) %>
 
-<body id="debts">
+<body id="debts" onload="activeOptionFooter('Add')">
   <%- include('./layout/notifications')%>
 
   <%- include('./layout/header')%>
 
-  <div style="height: 150px; overflow: hidden; width: 100%; position: fixed; top:0; left: 0; z-index: 15;">
-    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-      <path d="M-1.46,149.10 C152.59,30.99 275.05,127.45 501.35,149.10 L500.00,-0.00 L-0.00,-0.00 Z" style="stroke: none; fill: rgb(138 111 239);"></path>
-    </svg>
-  </div>
-
   <main>
-    <section id="includeForm">
 
-      <h1>Agregar Deuda</h1>
-      <p>Por favor ingrese el valor de la deuda
-      <p>
-
-      <form action="/debts" method="POST">
-
-        <label for="deudor" id="labelDeudor">
-          <br />
-          <input type="text" name="duedor" id="deudor" placeholder="Ingrese el contacto" required>
-        </label>
-        <label for="date" id="labelDate">
-          <br />
-          <input type="date" name="date" id="date" placeholder="Ingrese la fecha" required>
-        </label>
-        <label for="Saldo" id="labelSaldo">
-          <br />
-          <input type="number" name="fullSaldo" id="fullSaldo" placeholder="Ingrese el monto" required>
-        </label>
-        <label for="tsi" id="labelTsi">
-          <br />
-          <input type="number" name="tsi" id="tsi" placeholder="Ingrese  la tasa de interes" required>
-        </label>
-
-        <div id="Content-Buttons">
-        <button type="submit" id="sendForm">Aceptar</button>
-        <button type="submit" id="sendForm">Cancelar</button>
-      </div>
-
-      </form>
+    <section id="contentIngreso" class="hide">
+      <h1>Hola soy el Ingreso</h1>
     </section>
 
+    <section id="contentEgreso" class="hide">
+      <h1>Hola soy el Egreso</h1>
+    </section>
+
+  </main>
+
+  <div id="popUpOption">
+    <section id="contentPopUp">
+      <h2>¿Que deseas agregar?</h2>
+      <div id="contentOptionsButtons">
+        <button id="ingreso" onclick="changeView('ingreso')">Ingreso</button>
+        <button id="deuda" onclick="changeView('deuda')">Deuda/Egreso</button>
+      </div>
+    </section>
+  </div>
+
+
+  <script type="text/javascript">
+    const contentIngreso = document.getElementById("contentIngreso");
+    const contentEgreso = document.getElementById("contentEgreso");
+    const popUpOption = document.getElementById("popUpOption");
+
+    function changeView(type) {
+      (type == 'ingreso') ?
+      contentIngreso.classList.remove('hide'):
+        contentEgreso.classList.remove('hide');
+
+      popUpOption.classList.add('hide');
+    }
+  </script>
+
+  <%- include('./layout/footer') %>
 </body>
 
 <%- include('./layout/closeHtml') %>

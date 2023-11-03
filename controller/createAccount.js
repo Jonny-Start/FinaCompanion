@@ -32,7 +32,14 @@ module.exports = async (req, res) => {
       break;
     case "POST":
       if (req.path == "/createAccount") {
-        let { fullName, phoneNumber, email, password, active = 1 } = req.body;
+        let {
+          fullName,
+          phoneNumber,
+          email,
+          password,
+          active = 1,
+          gender = "female",
+        } = req.body;
         // validationEmail = false;
         // resetPassword = false;
 
@@ -66,6 +73,7 @@ module.exports = async (req, res) => {
             resetPassword: false,
             password: hash,
             active: true,
+            gender: "female",
           });
 
           new_user

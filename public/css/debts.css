@@ -1,158 +1,24 @@
-/*body#debts {
-    margin: 0;
-    padding: 0;
-    background-color: #22252a;
-
+#popUpOption {
+    position: fixed;
+    top: 0;
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-
-}
-
-body#debts main {
-    display: grid;
-    grid-template-columns: 65% 35%;
-    padding: 1em;
-    background-color: #22252a;
-    width: 100%;
-    margin-left: 4vw;
-    margin-right: 4vw;
-    border-radius: 15px;
-    height: 90vh;
-}*/
-
-/*body#debts section#includeImg {
+    left: 0;
+    background-color: #00000094;
+    z-index: 20;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-body#debts section#includeImg img {
-    width: 35em;
-}*/
-
-body#debts section#includeForm,
-body#debts form {
+section#contentPopUp {
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-body#debts section#includeForm {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    padding: 1em;
+    height: 25em;
+    width: 25em;
     border-radius: 10px;
-    /* margin-right: 1em; */
-    align-items: center;
-    margin-top: 10em;
-}
-
-body#debts h1 {
-    font-weight: bold;
-    font-size: 2em;
-    margin-bottom: 0;
-}
-
-body#debts h1~p {
-    margin-top: 0;
-    font-size: 0.9em;
-    color: #0000008a;
-}
-
-body#debts button {
-    width: 5em;
-}
-
-body#debts form {
-    margin-top: 0em;
-    align-items: center;
-    width: 15em;
-}
-
-body#debts form label {
-    width: 100%;
-    text-align: left;
-}
-
-body#debts label#labelPassword {
-    position: relative;
-}
-
-body#debts label#labelPassword>i {
-    position: absolute;
-    right: 0px;
-    top: 20px;
-    cursor: pointer;
-}
-
-body#debts label#labelPassword>input#password {
-    width: calc(100% - 23px);
-    padding-right: 23px;
-}
-
-
-body#debts input,
-body#debts input:focus {
-    border: 0px;
-    border-bottom: 2px black solid;
-    width: 100%;
-    outline: none;
-}
-
-body#debts input:focus {
-    border-color: #6f7eff;
-}
-
-body#debts a#recovery {
-    width: 100%;
-    text-align: right;
-    font-size: 0.9em;
-    margin-top: 0.5em;
-    color: #00000073;
-    margin-bottom: 3em;
-}
-
-body#debts button {
-    position: relative;
-    padding: 10px 40px;
-    color: white;
-    background: #22252a;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: .5s;
-    overflow: hidden;
-    border-radius: 2px;
-    width:180px;
-    height:35px;
-}
-
-body#debts div#Content-Buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 2em;
-}
-
-body#debts button:hover {
-    color:#dcc2e4;
-}
-
-body#debts button~p {
-    position: relative;
-    margin-top: 5em;
-}
-
-
-@media screen and (max-width: 1000px) {
-    body#debts main {
-        grid-template-columns: 1fr;
-    }
-
-    body#debts main section#includeImg {
-        display: none;
-    }
+    box-shadow: 1px 1px 20px #8a6fef6e;
+    border: 1px solid #8a6fef;
+    text-align: center;
 }

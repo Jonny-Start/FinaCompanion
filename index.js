@@ -126,6 +126,10 @@ const recoveryPassword = require("./controller/recoveryPassword");
 app.get("/recoveryPassword", verifySession, recoveryPassword);
 app.post("/recoveryPassword", verifySession, recoveryPassword);
 
+const overdueAccount = require("./controller/overdueAccount");
+app.get("/overdueAccount", verifySession, overdueAccount);
+app.post("/overdueAccount", verifySession, overdueAccount);
+
 // app.get("/", (req, res) => {
 //   const data = {
 //     title: "finacompanion",
