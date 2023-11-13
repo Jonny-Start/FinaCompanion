@@ -1,21 +1,16 @@
 
-table { 
-    border-collapse: collapse; 
-} 
-
-td, th /* Poner borde en td y th */ { 
-    border: 1px solid black;
-} 
-
-body#movements section#includeForm,
-body#movements form {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+main>section {
+    margin-top: 100px;
 }
 
-body#movements section#includeForm {
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+body#changePassword section#includeForm {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -26,89 +21,59 @@ body#movements section#includeForm {
     margin-top: 10em;
 }
 
-body#movements h1 {
-    font-weight: bold;
-    font-size: 2em;
-    margin-bottom: 0;
-}
-
-body#movements h1~p {
+body#changePassword h1~p {
     margin-top: 0;
     font-size: 0.9em;
     color: #0000008a;
 }
 
-body#movements button {
-    width: 5em;
+li{
+    list-style-type: none;
 }
 
-body#movements form {   
-    margin-top: 0em;
+p.lastUpdate {
+    font-size: 13px;
+    text-align: left;
+    margin-top: 0;
+}
+
+.contentTarjetHistory {
+    box-shadow: 1px 1px 20px 0px #00000038;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 15em;
+    justify-content: space-around;
+    padding: 1em;
+    background-color: white;
+    position: relative;
 }
 
-body#movements form label {
-    width: 100%;
+.contentTarjetHistory:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+
+.contentTarjetHistory span {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 10px;
+}
+
+
+p.dateHistory {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 15px;
+    margin: 0;
+}
+
+p.descriptionHistory {
     text-align: left;
 }
-body#movements input,
-body#movements input:focus {
-    border: 0px;
-    border-bottom: 2px black solid;
-    width: 100%;
-    outline: none;
-}
 
-body#movements input:focus {
-    border-color: #6f7eff;
-}
-
-body#movements a#recovery {
-    width: 100%;
-    text-align: right;
-    font-size: 0.9em;
-    margin-top: 0.5em;
-    color: #00000073;
-    margin-bottom: 3em;
-}
-
-body#movements button {
-    position: relative;
-    padding: 10px 40px;
-    color: white;
-    background: #22252a;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: .5s;
-    overflow: hidden;
-    border-radius: 2px;
-    width:180px;
-    height:35px;
-}
-
-body#movements div#Content-Buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 2em;
-}
-
-body#movements button:hover {
-    color:#dcc2e4;
-}
-
-body#movements button~p {
-    position: relative;
-    margin-top: 5em;
-}
-
-@media screen and (max-width: 1000px) {
-    body#movements main {
-        grid-template-columns: 1fr;
-    }
-
-    body#movements main section#includeImg {
-        display: none;
-    }
+p.descriptionHistory a {
+    text-decoration: none;
 }
