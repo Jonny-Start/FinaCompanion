@@ -109,7 +109,8 @@ header#headerFinaCompanion {
     align-content: center;
     flex-wrap: nowrap;
     position: fixed;
-    background-color: #8a6fef;
+    /* background-color: #8a6fef; */
+    background-color: #332958;
     /* background-color: transparent; */
     width: 100%;
     top: 0;

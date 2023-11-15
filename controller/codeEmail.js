@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const History = require("../models/history");
 const { newMessage, clearMessage } = require("./../middleware/utils");
 
 module.exports = async (req, res) => {
@@ -49,9 +50,17 @@ module.exports = async (req, res) => {
           { _id: req.session.userID },
           { validationEmail: null }
         )
-          .then((success) => {
+          .then(async (success) => {
             req.session.validationEmail = null;
             newMessage("success", "Codigo correcto", req);
+
+            await History.create({
+              user_id: _id,
+              id_author: _id,
+              id_bill: null,
+              description: "Cuenta a creada y verificada",
+            });
+
             return res.redirect("/home");
           })
           .catch((error) => {

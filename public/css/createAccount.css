@@ -143,8 +143,8 @@ body#createAccount button {
     transition: .5s;
     overflow: hidden;
     border-radius: 2px;
-    width:180px;
-    height:35px;
+    width: 180px;
+    height: 35px;
 }
 
 body#createAccount Button {
@@ -152,7 +152,7 @@ body#createAccount Button {
 }
 
 body#createAccount button:hover {
-    color:#dcc2e4;
+    color: #dcc2e4;
 }
 
 body#createAccount button~p {

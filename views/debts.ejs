@@ -73,14 +73,15 @@
       </ul>
 
 
-      <div class="contentPlus">
+      <!--ingreso-->
+      <div class="contentPlus" id="newIncome">
         <i class="fa-solid fa-plus"></i>
       </div>
 
     </section>
 
     <section id="contentEgreso" class="hide">
-      <h1>GASATOS / DEUDAS</h1>
+      <h1>GASTOS / DEUDAS</h1>
 
 
       <ul class="tabs" role="tablist">
@@ -111,7 +112,8 @@
       </ul>
 
 
-      <div class="contentPlus">
+      <!--spent-->
+      <div class="contentPlus" id="newSpent">
         <i class="fa-solid fa-plus"></i>
       </div>
 
@@ -142,6 +144,47 @@
   </div>
 
 
+  <div id="popUpIncome" class="hide popUpOptionAdd">
+    <section class="contentPopUpAdd">
+      <i class="fa-solid fa-xmark buttonXmark" onclick="showPopUp('income')"></i>
+
+      <h2>Registro de nuevo ingreso</h2>
+
+      <form action="/debts" method="post">
+        <label for="fullName" id="labelFullName" class="size_6">
+          Nombre completo
+          <br />
+          <input type="text" name="fullName" id="fullName" required>
+        </label>
+
+        <label for="phoneNumber" id="labelPhoneNumber" class="size_6">
+          Numero telefonico
+          <br />
+          <input type="number" name="phoneNumber" id="phoneNumber" required>
+        </label>
+
+        <label for="email" id="labelEmail" class="size_12">
+          Correo electronico
+          <br />
+          <input type="email" name="email" id="email" required>
+        </label>
+
+        <button type="submit" class="buttonAdd">Enviar</button>
+
+      </form>
+
+    </section>
+  </div>
+
+  <div id="popUpSpent" class="hide popUpOptionAdd">
+    <section class="contentPopUpAdd">
+      <i class="fa-solid fa-xmark buttonXmark" onclick="showPopUp('spend')"></i>
+
+      <h2>Registro de nuevo gasto o deuda</h2>
+    </section>
+  </div>
+
+
   <script type="text/javascript">
     const contentIngreso = document.getElementById("contentIngreso");
     const contentEgreso = document.getElementById("contentEgreso");
@@ -157,6 +200,27 @@
 
       popUpOption.classList.add('hide');
     }
+
+    function showPopUp(name) {
+      if (name == 'income') {
+        document.getElementById("popUpIncome").classList.toggle('hide');
+      } else if (name == 'spend') {
+        document.getElementById("popUpSpent").classList.toggle('hide');
+      } else {
+        return alert('Error al llamar la funcion showPopUp: ' + name);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Pop-Up de ingreso
+      const newIncome = document.getElementById("newIncome");
+      const newSpent = document.getElementById("newSpent");
+
+      if (newIncome && newSpent) {
+        newIncome.addEventListener('click', () => showPopUp('income'));
+        newSpent.addEventListener('click', () => showPopUp('spend'));
+      }
+    });
   </script>
 
   <%- include('./layout/footer') %>

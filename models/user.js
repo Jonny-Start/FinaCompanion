@@ -10,7 +10,7 @@ const userSchema = new Schema(
     resetPassword: { type: Number, required: false, default: false }, // Codigo se solicitud de recuperar contraseña
     password: { type: String, required: true }, // Contraseña
     active: { type: Boolean, required: true }, // Usuario activo True or False
-    gender: { type: String, required: false, default: null },
+    gender: { type: String, required: false, default: null }, // genero del usuario
   },
   {
     //El timestamps crea fecha de actualización y fecha de creación automáticamente
