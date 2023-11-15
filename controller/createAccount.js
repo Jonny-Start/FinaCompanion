@@ -73,7 +73,6 @@ module.exports = async (req, res) => {
             resetPassword: false,
             password: hash,
             active: true,
-            gender: "female",
           });
 
           new_user
