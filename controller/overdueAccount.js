@@ -19,6 +19,7 @@ module.exports = async (req, res) => {
         res.render("overdueAccount", {
           validationErrors,
           validationSuccess,
+          dataUser: req.session.contextUser,
         });
       }
       break;

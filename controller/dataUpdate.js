@@ -18,7 +18,8 @@ module.exports = async (req, res) => {
       if (req.path == "/dataUpdate") {
         res.render("dataupdate", {
           validationErrors,
-          validationSuccess
+          validationSuccess,
+          dataUser: req.session.contextUser,
         });
       }
       break;

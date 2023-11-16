@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const contactSchema = new Schema(
   {
-    user_id: { type: Number, required: true }, // Id del usuario al que le pertenece el movimiento
+    user_id: { type: String, required: true }, // Id del usuario al que le pertenece el movimiento
     fullName: { type: String, required: true }, //Nombre completo del contacto
     phoneNumber: { type: Number, required: false }, //Numero de telefono del contacto
     email: { type: String, required: false, default: null }, // Correo electronico del contacto

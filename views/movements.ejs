@@ -12,35 +12,32 @@
       <h1>Historial</h1>
       <p>
         <li>
-          
-            <p class="lastUpdate">Ultima actualización 20 de Julio de 2023 </p>
 
+          <p class="lastUpdate">Ultima actualización <%- formatDateLetters(dataHistory[0].createdAt) %></p>
+
+          <% dataHistory.forEach(function(data){ %>
+          <article class="contentTarjetHistory">
+            <span>FinaCompanion</span>
+            <p class="descriptionHistory"><%- data.description %></p>
+            <p class="dateHistory"><%- formatDate(data.createdAt) %></p>
+          </article>
+          <% }); %>
+
+          <!--
             <article class="contentTarjetHistory">
               <span>FinaCompanion</span>
               <p class="descriptionHistory"><a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Se actualizo el precio de la cuenta de $40,000 a $350,000 "#123"</a> </p>
               <p class="dateHistory">20/08/2023</p>
             </article>
-
-            <article class="contentTarjetHistory">
-              <span>FinaCompanion</span>
-              <p class="descriptionHistory"><a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Se actualizo el precio de la cuenta de $40,000 a $350,000 "#123"</a> </p>
-              <p class="dateHistory">20/08/2023</p>
-            </article>
-
-            <article class="contentTarjetHistory">
-              <span>FinaCompanion</span>
-              <p class="descriptionHistory"><a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Se actualizo el precio de la cuenta de $40,000 a $350,000 "#123"</a> </p>
-              <p class="dateHistory">20/08/2023</p>
-            </article>
-            
+            -->
           </div>
 
         </li>
 
-        
+
     </section>
-    
-  <%- include('./layout/footer') %>
+
+    <%- include('./layout/footer') %>
 </body>
 
 <%- include('./layout/closeHtml') %>

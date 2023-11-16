@@ -50,6 +50,11 @@ module.exports = async (req, res) => {
                 // if passwords match
                 // store user session, will talk about it later
                 req.session.userID = user.id;
+                req.session.contextUser = {
+                  fullName: user.fullName,
+                  email: user.email,
+                  gender: user.gender,
+                };
 
                 if (user.validationEmail) {
                   req.session.validationEmail = user.validationEmail;

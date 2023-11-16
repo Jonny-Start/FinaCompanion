@@ -110,6 +110,9 @@ body#createAccount label#labelPassword>input#confPassword:not(.termsAndCondi) {
     padding-right: 23px;
 }
 
+body#createAccount label#labelConfPassword {
+    margin-bottom: 0;
+}
 
 body#createAccount input:not(.termsAndCondi),
 body#createAccount input:focus:not(.termsAndCondi) {
@@ -158,11 +161,6 @@ body#createAccount button:hover {
 body#createAccount button~p {
     position: relative;
     margin-top: 5em;
-}
-
-
-body#createAccount label#labelConfPassword {
-    margin-bottom: 0;
 }
 
 p#confirmPass {

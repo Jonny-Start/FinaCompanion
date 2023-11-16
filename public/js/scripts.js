@@ -23,3 +23,7 @@ function activeOptionFooter(option) {
     return console.log(`${option} no está presente en OPCIONES.`);
   }
 }
+
+function redirect(endPoint) {
+  window.location.href = "/" + endPoint;
+}

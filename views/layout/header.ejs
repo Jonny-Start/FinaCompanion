@@ -1,18 +1,19 @@
 <header id="headerFinaCompanion">
-  <a href="#" id="profile">
+  <a href="/dataUpdate" id="profile">
     <!-- <div id=""> -->
-    <img src="public/img/Mujer.svg" alt="Profile" style="width: 3em; border-radius: 50%; box-shadow: 1px 1px 20px white;">
+    <img src="public/img/<% if (typeof dataUser !== 'undefined') { %><% if (dataUser.gender == 'M') { %>Hombre.svg<% } else if (dataUser.gender == 'F') {%>Mujer.svg<% } else {%>Neutro.svg<% } %><% } else {%>Neutro.svg<% } %>" alt="Profile" style="width: 3em; border-radius: 50%; box-shadow: 1px 1px 20px white;">
     <!-- </div> -->
     <span id="contentText">
-      <strong>Jonny Cano</strong>
+      <strong><% if (typeof dataUser !== 'undefined') { %> <%- dataUser.fullName %><% } else {%>Usuario<%}%></strong>
     </span>
   </a>
 
   <% if (typeof viewSettings !== 'undefined' && viewSettings == true) { %>
-  <a href="/closeSession" id="exitSession"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-  <% } else {%>
-  <a href="/dataUpdate" id="dataUpdate"><i class="fa-solid fa-sliders"></i></a>
-  <%}%>
+        <a href=" /closeSession" id="exitSession"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </a>
+        <% } else {%>
+        <a href="/dataUpdate" id="dataUpdate"><i class="fa-solid fa-sliders"></i></a>
+        <%}%>
 
 </header>
 

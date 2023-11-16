@@ -20,6 +20,7 @@ module.exports = async (req, res) => {
         res.render("deleteAccount", {
           validationErrors,
           validationSuccess,
+          dataUser: req.session.contextUser,
         });
       }
       break;

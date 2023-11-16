@@ -1,5 +1,10 @@
 const User = require("../models/user");
-const { newMessage, clearMessage } = require("./../middleware/utils");
+const {
+  newMessage,
+  clearMessage,
+  getDateToday,
+  getCurrentTime,
+} = require("./../middleware/utils");
 
 module.exports = async (req, res) => {
   let validationErrors = [];
@@ -16,9 +21,14 @@ module.exports = async (req, res) => {
   switch (TypeRequest) {
     case "GET":
       if (req.path == "/home") {
+        const dateToday = getDateToday();
+        const currentTime = getCurrentTime();
+
         res.render("home", {
           validationErrors,
           validationSuccess,
+          dataUser: req.session.contextUser,
+          dateToday,
         });
       }
       break;

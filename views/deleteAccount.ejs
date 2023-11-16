@@ -2,6 +2,7 @@
 
 <body id="deleteAccount">
   <%- include('./layout/notifications')%>
+  <%- include('./layout/header', { viewSettings: true })%>
 
   <main>
     <section class="textos-header">
@@ -33,7 +34,7 @@
           <span></span>
           Eliminar cuenta
         </button>
-        <button onclick="location.href='\home'">
+        <button type="button" onclick="redirect('dataUpdate')">
           <span></span>
           <span></span>
           <span></span>

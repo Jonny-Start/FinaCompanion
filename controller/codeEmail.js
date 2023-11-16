@@ -55,10 +55,10 @@ module.exports = async (req, res) => {
             newMessage("success", "Codigo correcto", req);
 
             await History.create({
-              user_id: _id,
-              id_author: _id,
-              id_bill: null,
-              description: "Cuenta a creada y verificada",
+              user_id: req.session.userID,
+              author_id: req.session.userID,
+              bill_id: null,
+              description: "Cuenta creada y verificada",
             });
 
             return res.redirect("/home");
