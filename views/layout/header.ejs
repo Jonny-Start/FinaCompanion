@@ -4,7 +4,7 @@
     <img src="public/img/<% if (typeof dataUser !== 'undefined') { %><% if (dataUser.gender == 'M') { %>Hombre.svg<% } else if (dataUser.gender == 'F') {%>Mujer.svg<% } else {%>Neutro.svg<% } %><% } else {%>Neutro.svg<% } %>" alt="Profile" style="width: 3em; border-radius: 50%; box-shadow: 1px 1px 20px white;">
     <!-- </div> -->
     <span id="contentText">
-      <strong><% if (typeof dataUser !== 'undefined') { %> <%- dataUser.fullName %><% } else {%>Usuario<%}%></strong>
+      <strong><% if (typeof dataUser !== 'undefined') { %> <%- dataUser.nickName %><% } else {%>Usuario<%}%></strong>
     </span>
   </a>
 

@@ -51,7 +51,7 @@ module.exports = async (req, res) => {
                 // store user session, will talk about it later
                 req.session.userID = user.id;
                 req.session.contextUser = {
-                  fullName: user.fullName,
+                  nickName: user.nickName ? user.nickName : user.fullName,
                   email: user.email,
                   gender: user.gender,
                 };

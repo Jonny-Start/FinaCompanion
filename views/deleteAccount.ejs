@@ -2,16 +2,16 @@
 
 <body id="deleteAccount">
   <%- include('./layout/notifications')%>
-  <%- include('./layout/header', { viewSettings: true })%>
+  <%- include('./layout/header')%>
 
   <main>
     <section class="textos-header">
       <h1>Eliminar mi Cuenta</h1>
-      <h2>¿Estas seguro de eliminar tu cuenta y todos tus datos relacionados de FinaCompanion?</h2>
+      <p>¿Estas seguro de eliminar tu cuenta y todos tus datos relacionados de FinaCompanion?</p>
     </section>
 
     <div class="contenedor-introduce-tu-contrasena">
-      <img src="/public/img/deleteAccount1.svg" alt="">
+      <img src="/public/img/deleteAccount1.svg" alt="imagen de eliminación">
       <div class="contenido-textos">
         <h3><span></span>Por favor Introduce tu contraseña</h3>
       </div>
@@ -26,13 +26,13 @@
         <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
       </label>
 
-      <div id="Content-Buttons">
+      <div id="content-Buttons">
         <button type="submit">
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-          Eliminar cuenta
+          Eliminar
         </button>
         <button type="button" onclick="redirect('dataUpdate')">
           <span></span>
