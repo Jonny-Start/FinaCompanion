@@ -1,0 +1,217 @@
+body#login {
+    margin: 0;
+    padding: 0;
+    background-color: #22252a;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+body#login main {
+    /* grid-template-columns: 1fr 1fr; */
+    display: grid;
+    grid-template-columns: 65% 35%;
+    padding: 1em;
+    width: 100%;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    border-radius: 15px;
+    height: 90vh;
+    background-color: #eeeeee;
+    /* gap: 1em; */
+    /* overflow: auto; */
+}
+
+
+body#login section#includeImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body#login section#includeImg img {
+    width: 40em;
+}
+
+body#login section#includeForm,
+body#login form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+body#login section#includeForm {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    /* margin-right: 1em; */
+    align-items: center;
+}
+
+
+body#login section#includeForm img {
+    width: 2em;
+    filter: opacity(0.7);
+    margin-top: 1em;
+}
+
+body#login h1 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+body#login h1~p {
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #0000008a;
+}
+
+body#login button {
+    width: 5em;
+}
+
+body#login form {
+    margin-top: 2em;
+    align-items: center;
+    width: 15em;
+}
+
+body#login form label {
+    width: 100%;
+    text-align: left;
+}
+
+body#login label#labelEmail {
+    margin-bottom: 2em;
+}
+
+body#login label#labelPassword {
+    position: relative;
+}
+
+body#login label#labelPassword>i {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    cursor: pointer;
+}
+
+body#login label#labelPassword>input#password {
+    width: calc(100% - 23px);
+    padding-right: 23px;
+}
+
+
+body#login input,
+body#login input:focus {
+    border: 0px;
+    border-bottom: 2px black solid;
+    width: 100%;
+    outline: none;
+}
+
+body#login input:focus {
+    border-color: #6f7eff;
+}
+
+body#login a#recovery {
+    width: 100%;
+    text-align: right;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    color: #00000073;
+    margin-bottom: 3em;
+}
+
+body#login button {
+    position: relative;
+    padding: 10px 40px;
+    color: white;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    border-radius: 2px;
+    width:180px;
+    height:35px;
+}
+body#login button:hover {
+    color: #dcc2e4;
+}
+
+body#login button span {
+    position: absolute;
+    background: rgb(227, 2, 247);
+    transition: .5s;
+    border-radius: 10px;
+}
+
+body#login button span:nth-child(1) {
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: -100%;
+}
+
+body#login button span:nth-child(2) {
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    right: -100%;
+}
+
+body#login button span:nth-child(3) {
+    width: 2px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+}
+
+body#login button span:nth-child(4) {
+    width: 2px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+}
+
+body#login button:hover span:nth-child(1) {
+    left: 0;
+}
+
+body#login button:hover span:nth-child(2) {
+    right: 0;
+}
+
+body#login button:hover span:nth-child(3) {
+    bottom: 0;
+}
+
+body#login button:hover span:nth-child(4) {
+    top: 0;
+}
+
+
+body#login button~p {
+    position: relative;
+    margin-top: 5em;
+}
+
+
+@media screen and (max-width: 1000px) {
+    body#login main {
+        grid-template-columns: 1fr;
+    }
+
+    body#login main section#includeImg {
+        display: none;
+    }
+}

@@ -1,0 +1,146 @@
+body#dataUpdate section#includeForm,
+body#dataUpdate form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+body#dataUpdate form {
+    padding: 2em;
+    gap: 15px;
+    margin-top: 2em;
+    width: calc(100% - 4em);
+}
+
+body#dataUpdate section#includeForm {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    /* margin-right: 1em; */
+    align-items: center;
+}
+
+body#dataUpdate h1 {
+    font-size: 2.5em;
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
+body#dataUpdate button {
+    width: 2em;
+}
+
+
+body#dataUpdate form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1em;
+    max-width: 40em;
+
+    color: #838080;
+}
+
+body#dataUpdate input,
+body#dataUpdate input:focus,
+body#dataUpdate select,
+body#dataUpdate select:focus {
+    border: 0px;
+    border-bottom: 2px black solid;
+    width: 100%;
+    outline: none;
+}
+
+body#dataUpdate input:focus,
+body#dataUpdate select:focus {
+    border-color: #6f7eff;
+}
+
+body#dataUpdate button {
+    position: relative;
+    padding: 10px 40px;
+    color: white;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* transition: .5s; */
+    overflow: hidden;
+    border-radius: 2px;
+    width: 180px;
+    height: 35px;
+    margin-bottom: 0.5em;
+}
+
+body#dataUpdate #content-Buttons {
+    margin-top: 3em;
+}
+
+
+body#dataUpdate button:hover {
+    color: #dcc2e4;
+}
+
+div.group {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+.content-Buttons {
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+
+body#dataUpdate label.inputGroup {
+    position: relative;
+}
+
+
+body#dataUpdate label.inputGroup>i {
+    position: absolute;
+    left: 0px;
+    top: 18px;
+    cursor: pointer;
+    color: #616ee1;
+}
+
+body#dataUpdate label.inputGroup>input {
+    width: calc(100% - 23px);
+    padding-left: 23px;
+}
+
+input:disabled,
+select:disabled {
+    cursor: not-allowed;
+
+}
+
+@media screen and (min-width: 750px) {
+
+    body#dataUpdate form .group-2 label {
+        width: 48%;
+    }
+
+    body#dataUpdate form .group-3 label {
+        width: 48%;
+    }
+
+}
+
+@media screen and (min-width: 1450px) {
+
+    body#dataUpdate form .group-3 label {
+        max-width: 26.5em;
+    }
+
+}

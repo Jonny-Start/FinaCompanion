@@ -1,0 +1,198 @@
+body#createAccount {
+    margin: 0;
+    padding: 0;
+    background-color: #22252a;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+body#createAccount main {
+    /* grid-template-columns: 1fr 1fr; */
+    display: grid;
+    grid-template-columns: 65% 35%;
+    padding: 1em;
+    background-color: #22252a;
+    width: 100%;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    border-radius: 15px;
+    height: 90vh;
+    /* gap: 1em; */
+    /* overflow: auto; */
+}
+
+body#createAccount section#includeImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body#createAccount section#includeImg img {
+    width: 40em;
+}
+
+body#createAccount section#includeForm,
+body#createAccount form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+body#createAccount section#includeForm {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    /* margin-right: 1em; */
+    align-items: center;
+}
+
+
+body#createAccount section#includeForm img {
+    width: 2em;
+    filter: opacity(0.7);
+    margin-top: 1em;
+}
+
+body#createAccount h1 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+body#createAccount h1~p {
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #0000008a;
+}
+
+body#createAccount button {
+    width: 2em;
+}
+
+body#createAccount form {
+    margin-top: 2em;
+    align-items: center;
+}
+
+body#createAccount form label {
+    width: 100%;
+    text-align: left;
+}
+
+body#createAccount label {
+    margin-bottom: 1em;
+}
+
+body#createAccount label#labelPassword,
+body#createAccount label#labelConfPassword {
+    position: relative;
+}
+
+
+body#createAccount label#labelPassword>i,
+body#createAccount label#labelConfPassword>i {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    cursor: pointer;
+}
+
+body#createAccount label#labelPassword>input#password:not(.termsAndCondi),
+body#createAccount label#labelPassword>input#confPassword:not(.termsAndCondi) {
+    width: calc(100% - 23px);
+    padding-right: 23px;
+}
+
+body#createAccount label#labelConfPassword {
+    margin-bottom: 0;
+}
+
+body#createAccount input:not(.termsAndCondi),
+body#createAccount input:focus:not(.termsAndCondi) {
+    border: 0px;
+    border-bottom: 2px black solid;
+    width: 100%;
+    outline: none;
+}
+
+body#createAccount input:focus:not(.termsAndCondi) {
+    border-color: #6f7eff;
+}
+
+body#createAccount a#recovery {
+    width: 100%;
+    text-align: right;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    color: #00000073;
+    margin-bottom: 3em;
+}
+
+body#createAccount button {
+    position: relative;
+    padding: 10px 40px;
+    color: white;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    border-radius: 2px;
+    width: 180px;
+    height: 35px;
+}
+
+body#createAccount Button {
+    margin-top: 2em;
+}
+
+body#createAccount button:hover {
+    color: #dcc2e4;
+}
+
+body#createAccount button~p {
+    position: relative;
+    margin-top: 5em;
+}
+
+p#confirmPass {
+    margin: 0;
+    font-size: 0.8em;
+    color: red;
+}
+
+span#terminosCondiciones {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+span#terminosCondiciones>input#termsAndCondi {
+    width: fit-content;
+    scale: 1.5;
+    margin: 0;
+    margin-right: 10px;
+
+}
+
+@media screen and (max-width: 1000px) {
+    body#createAccount main {
+        grid-template-columns: 1fr;
+    }
+
+    body#createAccount main section#includeImg {
+        display: none;
+    }
+}

@@ -1,0 +1,153 @@
+<%- include('./layout/head', { NAME_CSS: "home" }) %>
+
+<body id="home" onload="activeOptionFooter('Home')">
+  <%- include('./layout/header')%>
+  <%- include('./layout/notifications')%>
+
+  <section id="contenedorTarjetas">
+
+    <div class="textDescriptionTarget">
+      <p>Mis finanzas</p>
+      <span><%- dateToday %></span>
+    </div>
+
+    <section class="targetPrin" id="targetPrinUp">
+      <div class="icono">
+        <i class="fa-solid fa-arrow-up"></i>
+      </div>
+      <div class="data">
+        <span>Generado este mes</span>
+        <h3>$600.200</h3>
+        <p>Mi saldo hasta el dia de hoy</p>
+      </div>
+      <a href="#"><strong>Ver más <i class="fa-solid fa-arrow-right"></i></strong></a>
+    </section>
+
+    <section class="targetPrin" id="targetPrinDown">
+      <div class="icono">
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+      <div class="data">
+        <span>Saldo gastado este mes</span>
+        <h3>$898.974</h3>
+        <p>Mis gastos hasta el dia de hoy</p>
+        <a href="#">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+  </section>
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
+  <link rel="stylesheet" href="public/css/swiper-bundle.min.css" />
+
+  <section id="contacts">
+    <h2>Mis contactos</h2>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <div class="tajetContacts swiper-slide">
+          <img src="public/img/Neutro.svg" alt="Profile" style="width: 3em; border-radius: 50%; box-shadow: 1px 1px 20px white;">
+          <br />
+          <span class="contentText">
+            <p>Jonny Alejandro Cano Acosta</p>
+            <p>3015018468</p>
+          </span>
+        </div>
+
+        <div class="tajetContacts swiper-slide">
+          <img src="public/img/profile.jpg" alt="Profile" style="width: 3em; border-radius: 50%; box-shadow: 1px 1px 20px white;">
+          <br />
+          <span class="contentText">
+            <p>Jonny Alejandro Cano Acosta</p>
+            <p>3015018468</p>
+          </span>
+        </div>
+
+        <div class="tajetContacts swiper-slide">
+          <img src="public/img/profile.jpg" alt="Profile" style="width: 3em; border-radius: 50%; box-shadow: 1px 1px 20px white;">
+          <br />
+          <span class="contentText">
+            <p>Jonny Alejandro Cano Acosta</p>
+            <p>3015018468</p>
+          </span>
+        </div>
+
+        <div class="tajetContacts swiper-slide">
+          <img src="public/img/profile.jpg" alt="Profile" style="width: 3em; border-radius: 50%; box-shadow: 1px 1px 20px white;">
+          <br />
+          <span class="contentText">
+            <p>Jonny Alejandro Cano Acosta</p>
+            <p>3015018468</p>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contentUpAndDown">
+    <h2>Mis deudas y ingresos recientes</h2>
+
+    <section class="targetHistoriHome" id="targetUp">
+      <div class="icono">
+        <span class="material-symbols-outlined">
+          stacked_line_chart
+        </span>
+      </div>
+      <div class="data">
+        <span>Generado este mes</span>
+        <h3>$600.200</h3>
+        <p>Mi saldo hasta el dia de hoy</p>
+      </div>
+      <a href="#"><strong>Ver más <i class="fa-solid fa-chevron-right"></i></strong></a>
+    </section>
+
+    <section class="targetHistoriHome" id="targetDown">
+      <div class="icono">
+        <span class="material-symbols-outlined">
+          line_axis
+        </span>
+      </div>
+      <div class="data">
+        <span>Gastado este mes</span>
+        <h3>$600.200</h3>
+        <p>Mi saldo hasta el dia de hoy</p>
+      </div>
+      <a href="#"><strong>Ver más <i class="fa-solid fa-chevron-right"></i></strong></a>
+    </section>
+
+  </section>
+
+
+  <!-- Swiper JS -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+  <script src="public/js/swiper-bundle.min.js"></script>
+
+
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+  <%- include('./layout/footer') %>
+</body>
+<%- include('./layout/closeHtml') %>

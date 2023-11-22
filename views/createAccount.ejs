@@ -1,0 +1,118 @@
+<%- include('./layout/head', { NAME_CSS: "createAccount" }) %>
+
+<body id="createAccount">
+  <%- include('./layout/notifications')%>
+
+  <main>
+    <section id="includeImg">
+      <img src="public/img/NewIcono.svg" alt="Logo de FinaCompanion">
+    </section>
+
+    <section id="includeForm">
+
+      <!-- <img src="public/img/icono.png" alt="Logo de FinaCompanion"> -->
+
+      <h1>Crea una cuenta</h1>
+      <p>Por favor ingresa todos los datos solicitados</p>
+
+      <form action="/createAccount" method="POST">
+
+        <label for="fullName" id="labelFullName">
+          Nombre completo
+          <br />
+          <input type="text" name="fullName" id="fullName" required>
+        </label>
+
+        <label for="phoneNumber" id="labelPhoneNumber">
+          Numero telefonico
+          <br />
+          <input type="number" name="phoneNumber" id="phoneNumber" required>
+        </label>
+
+        <label for="email" id="labelEmail">
+          Correo electronico
+          <br />
+          <input type="email" name="email" id="email" required>
+        </label>
+
+        <label for="password" id="labelPassword">
+          Contraseña
+          <br />
+          <input type="password" name="password" id="password" required>
+          <i class="fa-regular fa-eye" id="eyeOpen" onclick="changeInput()"></i>
+          <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
+        </label>
+
+        <label for="confPassword" id="labelConfPassword">
+          Confirmar contraseña
+          <br />
+          <input type="password" name="confPassword" id="confPassword" required>
+          <i class="fa-regular fa-eye" id="eyeOpenConf" onclick="changeInputConf()"></i>
+          <i class="fa-regular fa-eye-slash hide" id="eyeCloseConf" onclick="changeInputConf()"></i>
+        </label>
+        <p id="confirmPass" class="hide">¡Las contraseñas no son las mismas!</p>
+
+        <span id="terminosCondiciones">
+          <input type="checkbox" name="termsAndCondi" id="termsAndCondi" onclick="validateTerm(this)">
+          <p>Acepto los <a href="#"> terminos y condiciones </a></p>
+        </span>
+        <!-- <a href="#" id="recovery">¿recuperar contraseña?</a> -->
+
+        <button type="submit" onclick="return validatePass()" disabled class="disabled" id="sendForm">Crear</button>
+
+        <p>¿Ya tienes cuenta? <a href="/login">Iniciar sesion</a></p>
+      </form>
+    </section>
+
+  </main>
+
+  <script type="text/javascript">
+    function changeInput() {
+      let inputCh = document.getElementById('password');
+      let eyeOpen = document.getElementById('eyeOpen');
+      let eyeClose = document.getElementById('eyeClose');
+      (inputCh.type == "text") ? (inputCh.type = "password") : (inputCh.type = "text")
+      eyeOpen.classList.toggle('hide');
+      eyeClose.classList.toggle('hide');
+    }
+
+    function changeInputConf() {
+      let inputCh = document.getElementById('confPassword');
+      let eyeOpen = document.getElementById('eyeOpenConf');
+      let eyeClose = document.getElementById('eyeCloseConf');
+      (inputCh.type == "text") ? (inputCh.type = "password") : (inputCh.type = "text")
+      eyeOpen.classList.toggle('hide');
+      eyeClose.classList.toggle('hide');
+    }
+
+    function validatePass() {
+      let inputCh = document.getElementById('password').value;
+      let inputChConf = document.getElementById('confPassword').value;
+      let confirmPass = document.getElementById('confirmPass');
+
+      if (inputCh != inputChConf) {
+        confirmPass.classList.contains("hide") && confirmPass.classList.remove("hide");
+        return false;
+      }
+
+      !(confirmPass.classList.contains("hide")) && confirmPass.classList.remove("hide");
+      return true;
+    }
+
+    function validateTerm(element) {
+      let sendForm = document.getElementById("sendForm");
+
+      if (element.checked) {
+        sendForm.classList.toggle('disabled');
+        sendForm.removeAttribute("disabled");
+      } else {
+        sendForm.classList.toggle('disabled');
+        sendForm.setAttribute("disabled", "true");
+      }
+
+    }
+  </script>
+
+</body>
+
+<%- include('./layout/closeHtml') %>

@@ -1,0 +1,75 @@
+<%- include('./layout/head', { NAME_CSS: "dataUpdate" }) %>
+
+<body id="dataUpdate">
+  <%- include('./layout/notifications')%>
+
+  <%- include('./layout/header', { viewSettings: true })%>
+
+  <main>
+
+    <section id="includeForm">
+
+      <h1>Actualización de Datos</h1>
+      <p> Ingrese los datos que requiere modificar </p>
+
+      <form action="/dataUpdate" method="POST">
+
+        <div class="group group-2">
+          <label for="fullName" id="labelFullName">
+            Nombre completo <span style="color:red;">*</span>
+            <br />
+            <input type="text" name="fullName" id="fullName" value="<%if (allDataUser.fullName) {%><%- allDataUser.fullName %><%}%>" required>
+          </label>
+
+          <label for="email" id="labelEmail" class="inputGroup">
+            Correo electrónico <span style="color:red;">*</span>
+            <br />
+            <input type="email" name="email" id="email" disabled value="<%if (allDataUser.email) {%><%- allDataUser.email %><%}%>" required>
+            <i class="fa-regular fa-envelope"></i>
+          </label>
+        </div>
+
+        <div class="group group-3">
+          <label for="phoneNumber" id="labelPhoneNumber" class="inputGroup">
+            Numero de telefono <span style="color:red;">*</span>
+            <br />
+            <input type="number" name="phoneNumber" id="phoneNumber" value="<%if (allDataUser.phoneNumber) {%><%- allDataUser.phoneNumber %><%}%>" required>
+            <i class="fa-solid fa-hashtag"></i>
+          </label>
+
+          <label for="nickName" id="labelNickName" class="inputGroup">
+            Apodo
+            <br />
+            <input type="text" name="nickName" id="nickName" value="<%if (allDataUser.nickName) {%><%- allDataUser.nickName %><%}%>" required>
+            <i class="fa-regular fa-user"></i>
+          </label>
+
+          <label for="gender" id="labelGender">
+            Genero
+            <br />
+            <select name="gender" id="gender">
+              <option <%if (typeof allDataUser.gender == 'undefined' || allDataUser.gender == null) {%>selected<%}%>></option>
+              <option value="M" <%if (typeof allDataUser.gender !== 'undefined' && allDataUser.gender == 'M' ) {%>selected<%}%> >Masculino</option>
+              <option value="F" <%if (typeof allDataUser.gender !== 'undefined' && allDataUser.gender == 'F') {%>selected<%}%>>Femenino</option>
+              <option value="O" <%if (typeof allDataUser.gender !== 'undefined' && allDataUser.gender == 'O') {%>selected<%}%>>Otro</option>
+            </select>
+            <!--<input type="text" name="fullName" id="fullName" required>-->
+          </label>
+
+        </div>
+
+
+        <div id="content-Buttons">
+          <button type="submit" id="sendForm">Actualizar</button>
+          <button type="button" id="backData" onclick="redirect('home')">Cancelar</button>
+        </div>
+
+        <p>¿Desea cambiar la contraseña? <a href="/changePassword">Cambiar Contraseña</a></p>
+        <p>¿Desea eliminar la cuenta? <a href="/deleteAccount">ir a eliminar</a></p>
+      </form>
+    </section>
+
+    <%- include('./layout/footer') %>
+</body>
+
+<%- include('./layout/closeHtml') %>

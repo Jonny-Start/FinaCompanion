@@ -1,0 +1,24 @@
+<header id="headerFinaCompanion">
+  <a href="/dataUpdate" id="profile">
+    <!-- <div id=""> -->
+    <img src="public/img/<% if (typeof dataUser !== 'undefined') { %><% if (dataUser.gender == 'M') { %>Hombre.svg<% } else if (dataUser.gender == 'F') {%>Mujer.svg<% } else {%>Neutro.svg<% } %><% } else {%>Neutro.svg<% } %>" alt="Profile" style="width: 3em; border-radius: 50%; box-shadow: 1px 1px 20px white;">
+    <!-- </div> -->
+    <span id="contentText">
+      <strong><% if (typeof dataUser !== 'undefined') { %> <%- dataUser.nickName %><% } else {%>Usuario<%}%></strong>
+    </span>
+  </a>
+
+  <% if (typeof viewSettings !== 'undefined' && viewSettings == true) { %>
+        <a href=" /closeSession" id="exitSession"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </a>
+        <% } else {%>
+        <a href="/dataUpdate" id="dataUpdate"><i class="fa-solid fa-sliders"></i></a>
+        <%}%>
+
+</header>
+
+  <div style="height: 100px; overflow: hidden; width: 100%; position: fixed; top:0; left: 0; z-index: 15;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+      <path d="M-1.46,149.10 C152.59,30.99 275.05,127.45 501.35,149.10 L500.00,-0.00 L-0.00,-0.00 Z" style="stroke: none; fill: rgb(51 41 88);"></path>
+    </svg>
+  </div>

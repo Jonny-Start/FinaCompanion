@@ -1,0 +1,460 @@
+:root {
+    --header: 6em;
+}
+
+button#ingreso {
+    margin-top: 2em;
+    background-color: #77e18f;
+    color: white;
+    border: 0px;
+    height: 100px;
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 2em;
+}
+
+button#deuda {
+    background-color: #ff9354db;
+    color: white;
+    border: 0px;
+    height: 100px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+button#ingreso span,
+button#deuda span {
+    font-size: 65px;
+}
+
+
+#popUpOption {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background-color: #00000094;
+    z-index: 20;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section#contentPopUp {
+    background-color: white;
+    padding: 1em;
+    height: 25em;
+    width: 25em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #8a6fef6e;
+    border: 1px solid #8a6fef;
+    text-align: center;
+}
+
+main>section {
+    margin-top: var(--header);
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+
+
+
+/* *****************
+*********TAPS******
+* **************** */
+
+.tabs {
+    width: calc(100% - 3em);
+    list-style: none;
+    position: relative;
+    margin: 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* gap: 8%; */
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-top: 3em;
+}
+
+.tabs li {
+    /* float: left; */
+    /* display: block; */
+    width: 100%;
+}
+
+.tabs input[type="radio"].check {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+}
+
+.tabs label.subtitle {
+    display: block;
+    padding: 14px 21px;
+    border-radius: 10px 10px 0 0;
+    border: 0px;
+    font-size: 20px;
+    font-weight: normal;
+    /* text-transform: uppercase; */
+    background: #f4f5ffba;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+/* .tabs label.subtitle:hover {
+    background: #d1d1d1;
+} */
+
+.tabs .tab-content {
+    z-index: 2;
+    display: none;
+    /* width: calc(100% - 2em); */
+    font-size: 17px;
+    line-height: 25px;
+    padding: 1em;
+    position: absolute;
+    top: 51px;
+    left: 0px;
+    min-height: 50vh;
+    min-width: -webkit-fill-available;
+    padding-bottom: 4em;
+    max-width: -webkit-fill-available;
+}
+
+.tabs [id^="tab"]:checked+label {
+    padding-top: 17px;
+    background: #dcdef5ba;
+    /* border: 1px solid; */
+    box-shadow: inset 2px -10px 20px -10px #a9b0e3ba;
+    height: 1em;
+    z-index: 3;
+    border-bottom: 0;
+}
+
+.tabs [id^="tab"]:checked~[id^="tab-content"] {
+    display: block;
+    border: 3px #dcdef5ba solid;
+    border-top: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #f3f3f3;
+}
+
+p.link {
+    clear: both;
+    margin: 380px 0 0 15px;
+}
+
+p.link a {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #c4c4c4;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+p.link a:hover {
+    background-color: #b7b7b7;
+}
+
+
+
+
+/* ********************
+*********TARJETAS******
+* ******************* */
+
+
+.contentTarjetIngre {
+    box-shadow: 1px 1px 20px 0px #00000038;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+    background-color: white;
+}
+
+.contentTarjetIngre:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+.contentTarjetIngre img {
+    width: 3em;
+    border-radius: 50%;
+    box-shadow: 1px 1px 20px white;
+}
+
+.contentTarjetIngre h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 10%;
+    min-width: 100px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+.contentTarjetIngre p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contentTarjetIngre p.dateInf {
+    font-size: 10px;
+    color: #0000007d;
+}
+
+
+/* ****************************
+*********TARJETAS HISTORY******
+* *************************** */
+
+p.lastUpdate {
+    font-size: 13px;
+    text-align: left;
+    margin-top: 0;
+}
+
+.contentTarjetHistory {
+    box-shadow: 1px 1px 20px 0px #00000038;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+    background-color: white;
+    position: relative;
+}
+
+.contentTarjetHistory:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+
+.contentTarjetHistory span {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 10px;
+}
+
+
+p.dateHistory {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 15px;
+    margin: 0;
+}
+
+p.descriptionHistory {
+    text-align: left;
+}
+
+p.descriptionHistory a {
+    text-decoration: none;
+}
+
+
+/* --------------------------------------------------------------------------------------- */
+
+div.contentPlus {
+    position: fixed;
+    bottom: 4em;
+    right: 2em;
+    z-index: 2;
+    background-color: #8a6fef;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 50%;
+    font-size: 22px;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+div.contentPlus:hover {
+    transform: rotate(80deg);
+}
+
+
+
+/*
+******************************
+*********Pop-Up Add***********
+******************************
+*/
+
+.popUpOptionAdd {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    background-color: #00000094;
+    z-index: 20;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 2.5em;
+}
+
+section.contentPopUpAdd {
+    background-color: white;
+    padding: 1em;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #8a6fef6e;
+    border: 1px solid #8a6fef;
+    text-align: center;
+
+    position: relative;
+    margin-bottom: 4em;
+}
+
+section.contentPopUpAdd .buttonXmark {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-size: 1em;
+    color: white;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+
+    border-radius: 50%;
+    background-color: #22252a;
+}
+
+section.contentPopUpAdd h2 {
+    font-size: 2em;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+
+section.contentPopUpAdd label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1em;
+
+    display: block;
+}
+
+
+section.contentPopUpAdd input,
+section.contentPopUpAdd input:focus {
+    border: 0px;
+    border-bottom: 2px black solid;
+    outline: none;
+    border-color: #6f7eff;
+
+}
+
+section.contentPopUpAdd .size_1 {
+    width: calc((100% / 12) * 1);
+}
+
+section.contentPopUpAdd .size_2 {
+    width: calc((100% / 12) * 2);
+}
+
+section.contentPopUpAdd .size_3 {
+    width: calc((100% / 12) * 3);
+}
+
+section.contentPopUpAdd .size_4 {
+    width: calc((100% / 12) * 4);
+}
+
+section.contentPopUpAdd .size_5 {
+    width: calc((100% / 12) * 5);
+}
+
+section.contentPopUpAdd .size_6 {
+    width: calc((100% / 12) * 6);
+}
+
+section.contentPopUpAdd .size_7 {
+    width: calc((100% / 12) * 7);
+}
+
+section.contentPopUpAdd .size_8 {
+    width: calc((100% / 12) * 8);
+}
+
+section.contentPopUpAdd .size_9 {
+    width: calc((100% / 12) * 9);
+}
+
+section.contentPopUpAdd .size_10 {
+    width: calc((100% / 12) * 10);
+}
+
+section.contentPopUpAdd .size_11 {
+    width: calc((100% / 12) * 11);
+}
+
+section.contentPopUpAdd .size_12 {
+    width: calc((100% / 12) * 12);
+}
+
+section.contentPopUpAdd button.buttonAdd {
+    position: relative;
+    padding: 10px 40px;
+    color: white;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    border-radius: 2px;
+    width: 180px;
+    height: 35px;
+
+    margin-top: 2em;
+}
+
+section.contentPopUpAdd button.buttonAdd:hover {
+    color: #dcc2e4;
+}
+
+section.contentPopUpAdd button.buttonAdd~p {
+    position: relative;
+    margin-top: 5em;
+}

@@ -1,0 +1,64 @@
+<%- include('./layout/head', { NAME_CSS: "deleteAccount" }) %>
+
+<body id="deleteAccount">
+  <%- include('./layout/notifications')%>
+  <%- include('./layout/header')%>
+
+  <main>
+    <section class="textos-header">
+      <h1>Eliminar mi Cuenta</h1>
+      <p>¿Estas seguro de eliminar tu cuenta y todos tus datos relacionados de FinaCompanion?</p>
+    </section>
+
+    <div class="contenedor-introduce-tu-contrasena">
+      <img src="/public/img/deleteAccount1.svg" alt="imagen de eliminación">
+      <div class="contenido-textos">
+        <h3><span></span>Por favor Introduce tu contraseña</h3>
+      </div>
+    </div>
+
+    <form action="/deleteAccount" method="POST">
+
+      <label for="password" id="labelPassword">
+        <br />
+        <input type="password" name="password" id="password" required>
+        <i class="fa-regular fa-eye" id="eyeOpen" onclick="changeInput()"></i>
+        <i class="fa-regular fa-eye-slash hide" id="eyeClose" onclick="changeInput()"></i>
+      </label>
+
+      <div id="content-Buttons">
+        <button type="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Eliminar
+        </button>
+        <button type="button" onclick="redirect('dataUpdate')">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Cancelar
+        </button>
+      </div>
+
+    </form>
+
+  </main>
+
+  <script type="text/javascript">
+    function changeInput() {
+      let inputCh = document.getElementById('password');
+      let eyeOpen = document.getElementById('eyeOpen');
+      let eyeClose = document.getElementById('eyeClose');
+      (inputCh.type == "text") ? (inputCh.type = "password") : (inputCh.type = "text")
+      eyeOpen.classList.toggle('hide');
+      eyeClose.classList.toggle('hide');
+    }
+  </script>
+
+  <%- include('./layout/footer') %>
+</body>
+
+<%- include('./layout/closeHtml') %>

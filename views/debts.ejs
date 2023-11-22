@@ -1,0 +1,229 @@
+<%- include('./layout/head', { NAME_CSS: "debts" }) %>
+
+<body id="debts" onload="activeOptionFooter('Add')">
+  <%- include('./layout/notifications')%>
+
+  <%- include('./layout/header')%>
+
+  <main>
+
+    <section id="contentIngreso" class="hide">
+      <h1>INGRESOS</h1>
+
+
+      <ul class="tabs" role="tablist">
+        <li>
+          <input class="check" type="radio" name="tabs" id="tab1" />
+          <label class="subtitle" for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0">INGRESO</label>
+          <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+
+            <article class="contentTarjetIngre hide">
+              No tienes ingresos registrados
+            </article>
+
+            <article class="contentTarjetIngre">
+              <img src="public/img/profile.jpg" alt="icono">
+              <h3>Jonny Alejandro Cano Acosta</h3>
+              <span class="contentPriceAndDate">
+                <p><span>$</span>154.000</p>
+                <p class="dateInf">20/08/2023</p>
+              </span>
+            </article>
+
+            <article class="contentTarjetIngre">
+              <img src="public/img/profile.jpg" alt="icono">
+              <h3>Jonny Alejandro Cano Acosta</h3>
+              <span class="contentPriceAndDate">
+                <p><span>$</span>154.000</p>
+                <p class="dateInf">20/08/2023</p>
+              </span>
+            </article>
+
+            <article class="contentTarjetIngre">
+              <img src="public/img/profile.jpg" alt="icono">
+              <h3>Jonny Alejandro Cano Acosta</h3>
+              <span class="contentPriceAndDate">
+                <p><span>$</span>154.000</p>
+                <p class="dateInf">20/08/2023</p>
+              </span>
+            </article>
+
+
+          </div>
+        </li>
+        <li>
+          <input class="check" type="radio" name="tabs" id="tab2" />
+          <label class="subtitle" for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="0">HISTORICO</label>
+          <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+            <p class="lastUpdate">Ultima actualización 20 de Julio de 2023 </p>
+
+            <article class="contentTarjetHistory hide">
+              No cuentas con historial de movimientos
+            </article>
+
+            <article class="contentTarjetHistory">
+              <span>FinaCompanion</span>
+              <p class="descriptionHistory"><a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Se actualizo el precio de la cuenta de $40,000 a $350,000 "#123"</a> </p>
+              <p class="dateHistory">20/08/2023</p>
+            </article>
+
+          </div>
+
+        </li>
+      </ul>
+
+
+      <!--ingreso-->
+      <div class="contentPlus" id="newIncome">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+
+    </section>
+
+    <section id="contentEgreso" class="hide">
+      <h1>GASTOS / DEUDAS</h1>
+
+
+      <ul class="tabs" role="tablist">
+        <li>
+          <input class="check" type="radio" name="tabs" id="tab3" />
+          <label class="subtitle" for="tab3" role="tab" aria-selected="true" aria-controls="panel3" tabindex="0">GASTOS</label>
+          <div id="tab-content3" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+
+            <article class="contentTarjetIngre">
+              No tienes deudas o gastos registrados
+            </article>
+
+          </div>
+        </li>
+
+        <li>
+          <input class="check" type="radio" name="tabs" id="tab4" />
+          <label class="subtitle" for="tab4" role="tab" aria-selected="false" aria-controls="panel4" tabindex="0">HISTORICO</label>
+          <div id="tab-content4" class="tab-content" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+            <p class="lastUpdate">No existe ultimo movimiento</p>
+
+            <article class="contentTarjetHistory">
+              No cuentas con historial de movimientos
+            </article>
+
+          </div>
+        </li>
+      </ul>
+
+
+      <!--spent-->
+      <div class="contentPlus" id="newSpent">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="popUpOption">
+    <section id="contentPopUp">
+      <h2>¿Que deseas agregar?</h2>
+      <div id="contentOptionsButtons">
+        <button id="ingreso" onclick="changeView('ingreso')">
+          <span class="material-symbols-outlined">
+            stacked_line_chart
+          </span>
+          <br />
+          Ingreso
+        </button>
+        <button id="deuda" onclick="changeView('deuda')">
+          <span class="material-symbols-outlined">
+            line_axis
+          </span>
+          <br />
+          Deuda/Egreso
+        </button>
+      </div>
+    </section>
+  </div>
+
+
+  <div id="popUpIncome" class="hide popUpOptionAdd">
+    <section class="contentPopUpAdd">
+      <i class="fa-solid fa-xmark buttonXmark" onclick="showPopUp('income')"></i>
+
+      <h2>Registro de nuevo ingreso</h2>
+
+      <form action="/debts" method="post">
+        <label for="fullName" id="labelFullName" class="size_6">
+          Nombre completo
+          <br />
+          <input type="text" name="fullName" id="fullName" required>
+        </label>
+
+        <label for="phoneNumber" id="labelPhoneNumber" class="size_6">
+          Numero telefonico
+          <br />
+          <input type="number" name="phoneNumber" id="phoneNumber" required>
+        </label>
+
+        <label for="email" id="labelEmail" class="size_12">
+          Correo electronico
+          <br />
+          <input type="email" name="email" id="email" required>
+        </label>
+
+        <button type="submit" class="buttonAdd">Enviar</button>
+
+      </form>
+
+    </section>
+  </div>
+
+  <div id="popUpSpent" class="hide popUpOptionAdd">
+    <section class="contentPopUpAdd">
+      <i class="fa-solid fa-xmark buttonXmark" onclick="showPopUp('spend')"></i>
+
+      <h2>Registro de nuevo gasto o deuda</h2>
+    </section>
+  </div>
+
+
+  <script type="text/javascript">
+    const contentIngreso = document.getElementById("contentIngreso");
+    const contentEgreso = document.getElementById("contentEgreso");
+    const popUpOption = document.getElementById("popUpOption");
+
+    const inputCheckFisrt = document.getElementById("tab1");
+    const inputCheckThird = document.getElementById("tab3");
+
+    function changeView(type) {
+      (type == 'ingreso') ?
+      (contentIngreso.classList.remove('hide'), inputCheckFisrt.checked = 'true') :
+      (contentEgreso.classList.remove('hide'), inputCheckThird.checked = 'true');
+
+      popUpOption.classList.add('hide');
+    }
+
+    function showPopUp(name) {
+      if (name == 'income') {
+        document.getElementById("popUpIncome").classList.toggle('hide');
+      } else if (name == 'spend') {
+        document.getElementById("popUpSpent").classList.toggle('hide');
+      } else {
+        return alert('Error al llamar la funcion showPopUp: ' + name);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Pop-Up de ingreso
+      const newIncome = document.getElementById("newIncome");
+      const newSpent = document.getElementById("newSpent");
+
+      if (newIncome && newSpent) {
+        newIncome.addEventListener('click', () => showPopUp('income'));
+        newSpent.addEventListener('click', () => showPopUp('spend'));
+      }
+    });
+  </script>
+
+  <%- include('./layout/footer') %>
+</body>
+
+<%- include('./layout/closeHtml') %>

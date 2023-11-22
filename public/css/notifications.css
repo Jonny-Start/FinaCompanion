@@ -1,0 +1,101 @@
+#notifications .fa-check {
+    font-size: 1.5em;
+}
+
+#notifications {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 50;
+}
+
+#notifications .notify {
+    width: 300px;
+    height: 70px;
+
+    /* min-height: 70px; */
+    z-index: 10;
+    position: relative;
+
+    background-color: hsl(0, 0%, 96%);
+    border-radius: 7px;
+    box-shadow: 0 1px 4px darken(hsl(202, 56%, 30%), 5%);
+    overflow: hidden;
+    cursor: pointer;
+    margin: 10px 0;
+
+    box-shadow: 3px 5px 12px 0px #0000006e;
+}
+
+#notifications .notify:first-child {
+    margin: 0 0 10px 0;
+}
+
+#notifications .circle {
+    width: 22px;
+    height: 20px;
+    display: block;
+    border-radius: 100%;
+    transform: translate(17px, 17px);
+    color: hsl(0, 0%, 96%);
+    padding: 10px;
+}
+
+#notifications .gr>.circle {
+    background-color: hsl(143, 51%, 45%);
+}
+
+#notifications .gr>.info span:first-child {
+    color: hsl(143, 51%, 45%);
+}
+
+#notifications .rd>.circle {
+    background-color: hsl(12, 85%, 47%);
+}
+
+#notifications .rd>.info span:first-child {
+    color: hsl(12, 85%, 47%);
+}
+
+#notifications .or>.circle {
+    background-color: hsl(24, 54%, 53%);
+}
+
+#notifications .or>.info span:first-child {
+    color: hsl(24, 54%, 53%);
+}
+
+#notifications .bl>.circle {
+    background-color: hsl(202, 56%, 30%);
+}
+
+#notifications .bl>.info span:first-child {
+    color: hsl(202, 56%, 30%);
+}
+
+#notifications .info {
+    width: 230px;
+    height: 70px;
+    transform: translate(70px, -35px);
+
+    padding: 10px;
+}
+
+#notifications .info span:first-child {
+    display: block;
+
+    color: hsl(143, 51%, 45%);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#notifications .info span:last-child {
+    color: hsl(0, 0%, 57%);
+    font-size: 13px;
+}
+
+#notifications .info span a {
+    color: hsl(0, 0%, 33%);
+    text-decoration: none;
+    font-weight: 600;
+}
