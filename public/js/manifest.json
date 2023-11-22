@@ -1,0 +1,25 @@
+{
+  "short_name": "FinaCompanion",
+  "name": "FinaCompanion",
+  "icons": [
+    {
+      "src": "./../img/icono64x64.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./../img/icono192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./../img/icono512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#8a6fef",
+  "background_color": "#22252a"
+}
