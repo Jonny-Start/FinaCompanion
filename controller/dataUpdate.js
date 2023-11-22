@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
       if (req.path == "/dataUpdate") {
         const allDataUser = await User.findById(req.session.userID);
 
-        res.render("dataupdate", {
+        res.render("dataUpdate", {
           validationErrors,
           validationSuccess,
           dataUser: req.session.contextUser,
