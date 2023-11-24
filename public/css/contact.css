@@ -36,8 +36,8 @@ body#contact button {
 
 body#contact form {
     margin-top: 2em;
-    align-items: center;
-    width: 15em;
+    /*align-items: center;*/
+    /*width: 15em;*/
 }
 
 body#contact form label {
@@ -100,6 +100,41 @@ body#contact button~p {
     margin-top: 5em;
 }
 
+div.group {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+.content-Buttons {
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+
+body#contact label.inputGroup {
+    position: relative;
+}
+
+
+body#contact label.inputGroup>i {
+    position: absolute;
+    left: 0px;
+    top: 18px;
+    cursor: pointer;
+    color: #616ee1;
+}
+
+body#contact label.inputGroup>input {
+    width: calc(100% - 23px);
+    padding-left: 23px;
+}
 
 @media screen and (max-width: 1000px) {
     body#contact main {
@@ -108,5 +143,20 @@ body#contact button~p {
 
     body#contact main section#includeImg {
         display: none;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+    body#contact form .group-2 label {
+        width: 48%;
+    }
+
+    body#contact form .group-3 label {
+        width: 48%;
+    }
+
+    body#contact form .group-4 label {
+        width: 48%;
     }
 }
