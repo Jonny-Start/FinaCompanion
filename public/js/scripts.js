@@ -11,6 +11,7 @@ function activeOptionFooter(option) {
     Home: "footer_home",
     Overdue: "footer_overdue",
     Setting: "footer_setting",
+    Groups: "footer_groups",
   };
 
   if (OPCIONES[option] !== undefined) {
