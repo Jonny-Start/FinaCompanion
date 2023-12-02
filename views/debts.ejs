@@ -152,9 +152,9 @@
 
       <form action="/debts" method="post">
 
-        <div class="group group-2" style="display: flex;gap: 10px;flex-direction: row;flex-wrap: wrap;justify-content: center;align-items: center;width: 239%;">
+        <div class="group group-2">
           
-          <label for="Contacto" id="labelContacto">
+          <label for="Contacto" id="labelContacto" class="inputGroup">
             Contacto <span style="color:red;">*</span>
             <br>
             <select name="gender" id="gender">
@@ -168,11 +168,11 @@
             </select>
           </label>
 
-          <label for="Monto" id="labelMonto">
+          <label for="Monto" id="labelMonto" class="inputGroup">
             Saldo <span style="color:red;">*</span>
             <br>
             <input type="number" name="Monto" id="Monto" required="">
-                <i class="fa-solid fa-hashtag"></i>
+            <i class="fa-solid fa-hashtag"></i>
           </label>
           
         </div>
@@ -180,7 +180,8 @@
 
         <div class="group group-3">
 
-          <label for="diaPago" id="labeldiaPago">Día de corte para pago<span style="color:red;">*</span>
+          <label for="diaPago" id="labeldiaPago" class="inputGroup">
+            Día de corte para pago<span style="color:red;">*</span>
             <br>
             <select name="gender" id="gender">
               <option selected=""></option>
@@ -192,7 +193,7 @@
             </select>
           </label>
 
-          <label for="tasaInteres" id="labeltasaInteres">
+          <label for="tasaInteres" id="labeltasaInteres" class="inputGroup">
             Tasa de interes
             <br>
             <input type="number" name="tasaInteres" id="tasaInteres" required="">
@@ -204,12 +205,13 @@
 
         <div class="group group-4">
 
-          <label for="dateMaxv" id="labeldateMaxv">Fecha máxima de pago<span style="color:red;">*</span>
+          <label for="dateMaxv" id="labeldateMaxv" class="inputGroup">
+            Fecha máxima de pago<span style="color:red;">*</span>
             <br>
             <input type="date" name="dateMaxv" id="dateMaxv" required="">
           </label>
 
-          <label for="Icono" id="labelIcono">
+          <label for="Icono" id="labelIcono" class="inputGroup">
             Icono 
             <br>
             <select name="gender" id="gender">
@@ -222,11 +224,11 @@
             </select>
           </label>
 
-          <label for="Desc" id="labelDesc">
+          <label for="Desc" id="labelDesc" class="inputGroup">
             Descripción
             <br>
             <input type="text" name="Desc" id="Desc" required="">
-                <i class="fa-solid fa-pen"></i>
+            <i class="fa-solid fa-pen"></i>
           </label>
 
         </div>

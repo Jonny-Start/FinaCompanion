@@ -31,13 +31,14 @@ body#contact h1~p {
 }
 
 body#contact button {
-    width: 5em;
+    width: 2em;
 }
 
 body#contact form {
+    padding: 2em;
+    gap: 15px;
     margin-top: 2em;
-    /*align-items: center;*/
-    /*width: 15em;*/
+    width: calc(100% - 4em);
 }
 
 body#contact form label {
@@ -50,14 +51,17 @@ body#contact form label {
 }*/
 
 body#contact input,
-body#contact input:focus {
+body#contact input:focus,
+body#contact select,
+body#contact select:focus {
     border: 0px;
     border-bottom: 2px black solid;
     width: 100%;
     outline: none;
 }
 
-body#contact input:focus {
+body#contact input:focus,
+body#contact select:focus {
     border-color: #6f7eff;
 }
 
@@ -78,16 +82,15 @@ body#contact button {
     border: none;
     outline: none;
     cursor: pointer;
-    transition: .5s;
+    /* transition: .5s; */
     overflow: hidden;
     border-radius: 2px;
-    width:180px;
-    height:35px;
+    width: 180px;
+    height: 35px;
+    margin-bottom: 0.5em;
 }
 
 body#contact div#Content-Buttons {
-    display: flex;
-    gap: 10px;
     margin-top: 2em;
 }
 
@@ -107,6 +110,7 @@ div.group {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    
 }
 
 p {
@@ -136,7 +140,7 @@ body#contact label.inputGroup>input {
     padding-left: 23px;
 }
 
-@media screen and (max-width: 1000px) {
+/*@media screen and (max-width: 1000px) {
     body#contact main {
         grid-template-columns: 1fr;
     }
@@ -144,7 +148,7 @@ body#contact label.inputGroup>input {
     body#contact main section#includeImg {
         display: none;
     }
-}
+}*/
 
 @media screen and (min-width: 750px) {
 
