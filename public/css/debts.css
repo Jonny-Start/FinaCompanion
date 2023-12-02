@@ -340,8 +340,8 @@ section.contentPopUpAdd {
     border: 1px solid #8a6fef;
     text-align: center;
 
-    position: relative;
-    margin-bottom: 4em;
+    position: absolute;
+    margin-bottom: 1em;
 }
 
 section.contentPopUpAdd .buttonXmark {
@@ -372,68 +372,24 @@ section.contentPopUpAdd label {
     text-align: left;
     margin-bottom: 1em;
 
-    display: block;
 }
-
 
 section.contentPopUpAdd input,
-section.contentPopUpAdd input:focus {
+section.contentPopUpAdd input:focus,
+section.contentPopUpAdd select,
+section.contentPopUpAdd select:focus {
     border: 0px;
     border-bottom: 2px black solid;
+    width: 100%;
     outline: none;
+}
+
+section.contentPopUpAdd input:focus,
+section.contentPopUpAdd select:focus {
     border-color: #6f7eff;
-
 }
 
-section.contentPopUpAdd .size_1 {
-    width: calc((100% / 12) * 1);
-}
-
-section.contentPopUpAdd .size_2 {
-    width: calc((100% / 12) * 2);
-}
-
-section.contentPopUpAdd .size_3 {
-    width: calc((100% / 12) * 3);
-}
-
-section.contentPopUpAdd .size_4 {
-    width: calc((100% / 12) * 4);
-}
-
-section.contentPopUpAdd .size_5 {
-    width: calc((100% / 12) * 5);
-}
-
-section.contentPopUpAdd .size_6 {
-    width: calc((100% / 12) * 6);
-}
-
-section.contentPopUpAdd .size_7 {
-    width: calc((100% / 12) * 7);
-}
-
-section.contentPopUpAdd .size_8 {
-    width: calc((100% / 12) * 8);
-}
-
-section.contentPopUpAdd .size_9 {
-    width: calc((100% / 12) * 9);
-}
-
-section.contentPopUpAdd .size_10 {
-    width: calc((100% / 12) * 10);
-}
-
-section.contentPopUpAdd .size_11 {
-    width: calc((100% / 12) * 11);
-}
-
-section.contentPopUpAdd .size_12 {
-    width: calc((100% / 12) * 12);
-}
-
-section.contentPopUpAdd button.buttonAdd {
+button#sendForm {
     position: relative;
     padding: 10px 40px;
     color: white;
@@ -444,17 +400,89 @@ section.contentPopUpAdd button.buttonAdd {
     transition: .5s;
     overflow: hidden;
     border-radius: 2px;
+    width:180px;
+    height:35px;
+}
+
+.popUpOptionAdd #debts button {
+    position: relative;
+    padding: 10px 40px;
+    color: white;
+    background: #22252a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* transition: .5s; */
+    overflow: hidden;
+    border-radius: 2px;
     width: 180px;
     height: 35px;
-
+    margin-bottom: 0.5em;
+}
+.popUpOptionAdd div#Content-Buttons {
+    display: flex;
+    gap: 10px;
     margin-top: 2em;
+    align-items: center;
+    justify-content: center;
 }
 
-section.contentPopUpAdd button.buttonAdd:hover {
-    color: #dcc2e4;
+.popUpOptionAdd button#sendForm:hover {
+    color:#dcc2e4;
 }
 
-section.contentPopUpAdd button.buttonAdd~p {
+.popUpOptionAdd button#sendForm~p {
     position: relative;
     margin-top: 5em;
+}
+
+div.group {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+.content-Buttons {
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+
+.popUpOptionAdd label.inputGroup {
+    position: relative;
+}
+
+
+.popUpOptionAdd label.inputGroup>i {
+    position: absolute;
+    left: 0px;
+    top: 18px;
+    cursor: pointer;
+    color: #616ee1;
+}
+
+.popUpOptionAdd label.inputGroup>input {
+    width: calc(100% - 23px);
+    padding-left: 23px;
+}
+
+@media screen and (min-width: 750px) {
+
+    .popUpOptionAdd form .group-2 label {
+        width: 48%;
+    }
+
+    .popUpOptionAdd form .group-3 label {
+        width: 48%;
+    }
+
+    .popUpOptionAdd form .group-4 label {
+        width: 48%;
+    }
 }

@@ -37,8 +37,6 @@ module.exports = async (req, res) => {
           phoneNumber,
           email,
           password,
-          active = 1,
-          gender = "female",
         } = req.body;
         // validationEmail = false;
         // resetPassword = false;

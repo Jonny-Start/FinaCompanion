@@ -13,20 +13,59 @@
 
       <form action="/contact" method="POST">
 
-        <label for="fullName" id="labelFullName">
-          <br />
-          <input type="text" name="fullName" id="fullName" placeholder="Nombre completo" required>
-        </label>
+        <div class="group group-2">
+          <label for="fullName" id="labelFullName" class="inputGroup">
+            Nombre completo <span style="color:red;">*</span>
+            <br>
+            <input type="text" name="fullName" id="fullName" required="">
+          </label>
 
-        <label for="phoneNumber" id="labelPhoneNumber">
-          <br />
-          <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Numero telefónico" required>
-        </label>
+          <label for="email" id="labelEmail" class="inputGroup">
+            Correo electrónico <span style="color:red;">*</span>
+            <br>
+            <input type="email" name="email" id="email" required="">
+            <i class="fa-regular fa-envelope"></i>
+          </label>
+        </div>
 
-        <label for="email" id="labelEmail">
-          <br />
-          <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
-        </label>
+        <div class="group group-3">
+          <label for="phoneNumber" id="labelPhoneNumber" class="inputGroup">
+            Numero de telefono <span style="color:red;">*</span>
+            <br>
+            <input type="number" name="phoneNumber" id="phoneNumber" required="">
+            <i class="fa-solid fa-hashtag"></i>
+          </label>
+
+          <label for="Address" id="labelAddress" class="inputGroup">
+            Dirección
+            <br>
+            <input type="text" name="Address" id="Address" required="" class="inputGroup">
+            <i class="fa-solid fa-house-chimney-user"></i>
+          </label>
+
+          <label for="gender" id="labelGender">
+            Genero
+            <br>
+            <select name="gender" id="gender" class="inputGroup">
+              <option selected=""></option>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+              <option value="O">Otro</option>
+            </select>
+          </label>
+
+        </div>
+
+        <div class="group group-4">
+
+          <label for="Desc" id="labelDesc" class="inputGroup">
+            Descripción
+            <br>
+            <input type="text" name="Desc" id="Desc" required="">
+            <i class="fa-solid fa-pen"></i>
+          </label>
+
+        </div>
 
         <div id="Content-Buttons">
           <button type="submit" id="sendForm">Añadir</button>

@@ -109,6 +109,10 @@ const deleteAccount = require("./controller/deleteAccount");
 app.get("/deleteAccount", verifySession, deleteAccount);
 app.post("/deleteAccount", verifySession, deleteAccount);
 
+const groups = require("./controller/groups");
+app.get("/groups", verifySession, groups);
+app.post("/groups", verifySession, groups);
+
 const home = require("./controller/home");
 app.get("/home", verifySession, home);
 

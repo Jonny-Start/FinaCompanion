@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema(
   {
     fullName: { type: String, required: true }, //Nombre completo
-    nickName: { type: String, required: true, default: null }, //Apodo
+    nickName: { type: String, required: false, default: null }, //Apodo
     phoneNumber: { type: Number, required: true }, //Numero de telefono
     email: { type: String, required: true, unique: true }, // Correo electronico
     validationEmail: { type: Number, required: false, default: false }, // Numero para validar correo

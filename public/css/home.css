@@ -2,6 +2,10 @@ body#home {
     text-align: -webkit-center;
 }
 
+body#home #notifications {
+    text-align: initial;
+}
+
 div.textDescriptionTarget {
     z-index: 16;
     position: fixed;

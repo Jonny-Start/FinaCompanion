@@ -151,25 +151,92 @@
       <h2>Registro de nuevo ingreso</h2>
 
       <form action="/debts" method="post">
-        <label for="fullName" id="labelFullName" class="size_6">
-          Nombre completo
-          <br />
-          <input type="text" name="fullName" id="fullName" required>
-        </label>
 
-        <label for="phoneNumber" id="labelPhoneNumber" class="size_6">
-          Numero telefonico
-          <br />
-          <input type="number" name="phoneNumber" id="phoneNumber" required>
-        </label>
+        <div class="group group-2">
+          
+          <label for="Contacto" id="labelContacto" class="inputGroup">
+            Contacto <span style="color:red;">*</span>
+            <br>
+            <select name="gender" id="gender">
+              <option selected=""></option>
+              <option value="Jo">Jonny</option>
+              <option value="An">Angel</option>
+              <option value="Al">Alejandro</option>
+              <option value="Tr">Trujillo</option>
+              <option value="Es">Estructura</option>
+              <option value="O">Otro</option>
+            </select>
+          </label>
 
-        <label for="email" id="labelEmail" class="size_12">
-          Correo electronico
-          <br />
-          <input type="email" name="email" id="email" required>
-        </label>
+          <label for="Monto" id="labelMonto" class="inputGroup">
+            Saldo <span style="color:red;">*</span>
+            <br>
+            <input type="number" name="Monto" id="Monto" required="">
+            <i class="fa-solid fa-hashtag"></i>
+          </label>
+          
+        </div>
 
-        <button type="submit" class="buttonAdd">Enviar</button>
+
+        <div class="group group-3">
+
+          <label for="diaPago" id="labeldiaPago" class="inputGroup">
+            Día de corte para pago<span style="color:red;">*</span>
+            <br>
+            <select name="gender" id="gender">
+              <option selected=""></option>
+              <option value="a">5</option>
+              <option value="b">15</option>
+              <option value="c">25</option>
+              <option value="d">30</option>
+              <option value="O">Otro</option>
+            </select>
+          </label>
+
+          <label for="tasaInteres" id="labeltasaInteres" class="inputGroup">
+            Tasa de interes
+            <br>
+            <input type="number" name="tasaInteres" id="tasaInteres" required="">
+                <i class="fa-solid fa-percent"></i>
+          </label>
+
+        </div>
+
+
+        <div class="group group-4">
+
+          <label for="dateMaxv" id="labeldateMaxv" class="inputGroup">
+            Fecha máxima de pago<span style="color:red;">*</span>
+            <br>
+            <input type="date" name="dateMaxv" id="dateMaxv" required="">
+          </label>
+
+          <label for="Icono" id="labelIcono" class="inputGroup">
+            Icono 
+            <br>
+            <select name="gender" id="gender">
+              <option selected=""></option>
+              <option value="IM1">IMAGEN1</option>
+              <option value="IM2">IMAGEN2</option>
+              <option value="IM3">IMAGEN3</option>
+              <option value="IM4">IMAGEN4</option>
+              <option value="IM5">Otro</option>
+            </select>
+          </label>
+
+          <label for="Desc" id="labelDesc" class="inputGroup">
+            Descripción
+            <br>
+            <input type="text" name="Desc" id="Desc" required="">
+            <i class="fa-solid fa-pen"></i>
+          </label>
+
+        </div>
+
+        <div id="Content-Buttons">
+          <button type="submit" id="sendForm">Añadir</button>
+          <button type="submit" id="sendForm">Cancelar</button>
+        </div>
 
       </form>
 
