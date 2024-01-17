@@ -1,6 +1,6 @@
 # Plataforma Integral de Finanzas y Deudas Compartidas
 
-![Logo de la aplicación](public/img/icono.png)
+![Logo de la aplicación](public/img/icono512x512.png)
 
 ## 🚀 Acerca de la aplicación
 
