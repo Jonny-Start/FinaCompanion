@@ -19,3 +19,20 @@ Nuestra aplicación es una plataforma integral diseñada para manejar finanzas y
 ```bash
 git clone https://github.com/Jonny-Start/FinaCompanion.git
 ```
+
+2. Instala las dependencias
+
+```bash
+npm install
+```
+
+3. Crea las variables de entorno
+
+- Copiar el archivo **sample.env** y renombrarlo como **.env** si cambiarlo de ruta
+- Remplazar los valores del archivo para su funcionamiento.
+
+4. Inicia el proyecto
+
+```bash
+npm run start
+```
