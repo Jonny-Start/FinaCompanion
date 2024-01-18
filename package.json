@@ -1,6 +1,6 @@
 {
   "name": "finacompanion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Aplicación web para administrar finanzas personales",
   "main": "index.js",
   "scripts": {
