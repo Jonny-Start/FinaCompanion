@@ -5,6 +5,8 @@ const ejs = require("ejs");
 const initDB = require("./config/db");
 const session = require("express-session");
 const { verifySession } = require("./middleware/verificationSession");
+const path = require("path");
+const webpush = require("web-push");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -18,12 +20,53 @@ const app = express();
 // Configurar EJS como motor de plantillas
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views"); // Directorio donde se encuentran tus plantillas
-app.use("/public", express.static("public")); // Dejar fija la ruta de la carpeta
+app.use("/public", express.static(path.join(__dirname, "public"))); // Dejar fija la ruta de la carpeta
+app.use("/lib", express.static(path.join(__dirname, "lib"))); // Dejar fija la ruta de librerias
+
+// Configuración para las notificaciones push
+
+/* if (
+  (process.env.VAPID_PUBLIC_KEY == null ||
+    process.env.VAPID_PUBLIC_KEY == undefined ||
+    process.env.VAPID_PUBLIC_KEY == "") &&
+  (process.env.VAPID_PRIVATE_KEY == null ||
+    process.env.VAPID_PRIVATE_KEY == undefined ||
+    process.env.VAPID_PRIVATE_KEY == "")
+) {
+  let vapidKeys = webpush.generateVAPIDKeys();
+
+  process.env.VAPID_PUBLIC_KEY = vapidKeys.publicKey;
+  process.env.VAPID_PRIVATE_KEY = vapidKeys.privateKey;
+}
+*/
+
+const vapidKeys = {
+  publicKey: process.env.VAPID_PUBLIC_KEY,
+  privateKey: process.env.VAPID_PRIVATE_KEY,
+};
+
+webpush.setVapidDetails(
+  "mailto:jonnyalejandro.ca0910@gmail.com",
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+
+// Ruta para el service worker
+app.get("/sw.js", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "sw.js"));
+});
+
+// Ruta para la página offline
+app.get("/views", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "views/login.ejs"));
+});
 
 // Correr express en un puerto
-app.listen(PORT);
-console.log("Server running on port", PORT);
-initDB();
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+  initDB();
+});
+
 app.use(express.json());
 
 // Configura express-session
@@ -79,6 +122,39 @@ app.get("/closeSession", (req, res) => {
   req.session.destroy((err) => {
     res.redirect("/"); // will always fire after session is destroyed
   });
+});
+
+// endpoint para obtener la clave pública de VAPID
+app.get("/getVAPID_PUBLIC_KEY", (req, res) => {
+  res.json({
+    applicationServerKey: process.env.VAPID_PUBLIC_KEY,
+  });
+});
+
+// Almacén para las suscripciones a notificaciones push
+const subscriptions = [];
+
+// Ruta para suscribirse a notificaciones push
+app.post("/subscribeNotifications", (req, res) => {
+  const subscription = req.body;
+  subscriptions.push(subscription);
+  //Crear copia de suscripciones!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  res.status(201).json({ message: "Subscription added successfully." });
+});
+
+// Ruta para enviar notificación push
+app.get("/send-notification", (req, res) => {
+  const payload = JSON.stringify({ title: "Test de notificación" });
+
+  subscriptions.forEach((subscription) => {
+    webpush
+      .sendNotification(subscription, payload)
+      .catch((error) =>
+        console.error("Error sending push notification:", error)
+      );
+  });
+
+  res.status(201).json({ message: "Notifications sent successfully." });
 });
 
 const changePassword = require("./controller/changePassword");
