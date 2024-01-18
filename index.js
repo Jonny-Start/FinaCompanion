@@ -62,9 +62,11 @@ app.get("/views", (req, res) => {
 });
 
 // Correr express en un puerto
-app.listen(PORT);
-console.log("Server running on port", PORT);
-initDB();
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+  initDB();
+});
+
 app.use(express.json());
 
 // Configura express-session
@@ -136,7 +138,7 @@ const subscriptions = [];
 app.post("/subscribeNotifications", (req, res) => {
   const subscription = req.body;
   subscriptions.push(subscription);
-  //Crear copia de suscripciones
+  //Crear copia de suscripciones!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   res.status(201).json({ message: "Subscription added successfully." });
 });
 

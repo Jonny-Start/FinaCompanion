@@ -9,18 +9,29 @@ if ("serviceWorker" in navigator) {
     });
 }
 
+var wifiOff = document.getElementById("wifiOff");
 // Comprueba si el usuario está offline al cargar la página
 if (!navigator.onLine) {
   console.log("El usuario está offline");
+  wifiOff.classList.contains("hide") ? wifiOff.classList.remove("hide") : "";
+  alert("¡Estás offline!");
+} else {
+  console.log("El usuario está online");
+  wifiOff.classList.contains("hide") ? "" : wifiOff.classList.add("hide");
+  // alert("¡Estás online!");
 }
 
 // Escucha los eventos 'online' y 'offline'
 window.addEventListener("online", () => {
   console.log("El usuario está online");
+  wifiOff.classList.contains("hide") ? "" : wifiOff.classList.add("hide");
+  // alert("¡Estás online!");
 });
 
 window.addEventListener("offline", () => {
   console.log("El usuario está offline");
+  wifiOff.classList.contains("hide") ? wifiOff.classList.remove("hide") : "";
+  alert("¡Estás offline!");
 });
 
 // localStorage.removeItem('clave');
@@ -28,7 +39,6 @@ window.addEventListener("offline", () => {
 
 // Suscripción a notificaciones push
 function subscribePush() {
-
   navigator.serviceWorker.ready.then((registration) => {
     //busco el token en el localstorage
     var public_key = localStorage.getItem("VAPID_PUBLIC_KEY");
@@ -59,7 +69,5 @@ function subscribePush() {
         alert("¡Suscripción exitosa!");
       });
   });
-
 }
 // const registration = await navigator.serviceWorker.register('/sw.js');
-

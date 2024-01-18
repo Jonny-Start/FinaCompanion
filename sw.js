@@ -3,7 +3,7 @@ importScripts("lib/workbox-sw.js");
 
 workbox.setConfig({ debug: false });
 
-const version = "1.0.928";
+const version = "1.0.935";
 const precacheName = `precache-${version}`;
 const dynamicCacheName = `dynamic-${version}`;
 
@@ -28,8 +28,12 @@ workbox.precaching.precacheAndRoute(
 // Cacheo de recursos estáticos y vistas EJS
 workbox.routing.registerRoute(
   /\.(js|css|html|ejs|png|jpg|jpeg|svg|gif)$/,
-  new workbox.strategies.StaleWhileRevalidate({
-    // cacheName: "static-resources",
+  // new workbox.strategies.StaleWhileRevalidate({
+  //   // cacheName: "static-resources",
+  //   cacheName: dynamicCacheName,
+  // })
+  //  Esta estrategia intentará primero obtener la respuesta de la red
+  new workbox.strategies.NetworkFirst({
     cacheName: dynamicCacheName,
   })
 );
